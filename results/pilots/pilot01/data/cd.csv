@@ -1,0 +1,11 @@
+response,trial_index,time_elapsed,participantID,age,gender,language,amE,education,comments,content,qud,prior,utterance,predicate,valence
+0.55,1,55800,6,45,female,English,AmE,graduated college,""":""""}",Jackson ran ten miles,ai,lower,simple-pos,simple,pos
+0,1,49167,10,31,male,English,AmE,some college,""":""""}",Jackson ran ten miles,ai,lower,simple-neg,simple,neg
+0.33,1,22265,8,27,non-binary,English,AmE,graduated high school,""":""""}",Jackson ran ten miles,ai,lower,simple-neg,simple,neg
+1,1,33040,7,63,female,English,AmE,graduated college,""":""""}",Charley speaks Spanish,ai,lower,know-pos,know,pos
+0.47,1,40953,3,66,female,English,AmE,some college,""":""""}",Charley speaks Spanish,nai,lower,think-neg,think,neg
+0.7,1,41523,2,38,female,English,AmE,hold a higher degree,""":""""}",Charley speaks Spanish,nai,higher,think-pos,think,pos
+0.84,1,48086,5,38,male,English,AmE,graduated college,""":""None, thanks""}",Jackson ran ten miles,ai,higher,think-pos,think,pos
+0.9,1,34059,9,22,female,English,AmE,some high school,""":""It is certainly interesting to note that the study takes place on an IP address as opposed to a website; I wonder if it was made on its own. If so, that is very impressive.""}",Charley speaks Spanish,nai,higher,think-pos,think,pos
+1,1,46491,1,60,male,English,AmE,graduated high school,""":""""}",Charley speaks Spanish,ai,lower,know-pos,know,pos
+1,1,61705,4,51,female,English,AmE,some college,".""}",Charley speaks Spanish,nai,lower,know-pos,know,pos

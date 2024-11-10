@@ -1,0 +1,328 @@
+participantID,age,gender,language,amE,education,comments,content,qud,utterance,predicate,valence,responseCC,responseMC
+389,22,male,English,AmE,some college,""":""""}",Jackson ran ten miles,ai,know-neg,know,neg,0.49,0.5
+358,58,female,English,AmE,graduated college,""":""""}",Jackson ran ten miles,ai,think-neg,think,neg,0.19,0.07
+353,58,female,English,AmE,graduated high school,""":""none at this time""}",Jackson ran ten miles,ai,think-pos,think,pos,0.46,0.74
+334,55,female,English,AmE,graduated high school,""":""None...Thank you.""}",Jackson ran ten miles,ai,think-pos,think,pos,0.82,0.84
+336,52,female,English,AmE,hold a higher degree,""":""None""}",Jackson ran ten miles,ai,know-pos,know,pos,0.95,0.97
+380,42,preferNoToSay,English,AmE,some college,""":""""}",Jackson ran ten miles,ai,know-neg,know,neg,0.54,0.71
+398,42,female,English,AmE,hold a higher degree,""":""""}",Jackson ran ten miles,ai,think-neg,think,neg,0.32,0.05
+370,60,female,English,AmE,hold a higher degree,""":""""}",Jackson ran ten miles,ai,think-pos,think,pos,0.95,0.95
+364,38,female,English,AmE,graduated college,""":""""}",Jackson ran ten miles,ai,know-pos,know,pos,1,0.97
+376,28,female,English,AmE,graduated high school,""":""""}",Jackson ran ten miles,ai,know-pos,know,pos,1,1
+327,24,female,English,AmE,hold a higher degree,""":""""}",Jackson ran ten miles,ai,think-neg,think,neg,0.47,0
+383,34,female,English,AmE,graduated college,""":""""}",Jackson ran ten miles,ai,think-pos,think,pos,0.84,0.95
+381,23,male,English,AmE,some college,""":""none""}",Jackson ran ten miles,ai,know-neg,know,neg,0.47,0.42
+361,34,female,English,AmE,graduated college,""":""""}",Jackson ran ten miles,ai,know-neg,know,neg,0.49,0.49
+363,25,female,English,AmE,graduated college,""":""""}",Jackson ran ten miles,ai,know-pos,know,pos,1,0.96
+331,23,female,English,AmE,graduated college,""":""""}",Jackson ran ten miles,ai,know-neg,know,neg,0.8,0.16
+352,53,female,English,AmE,graduated college,""":""N/a""}",Jackson ran ten miles,ai,know-pos,know,pos,0.77,0.84
+330,41,male,English,AmE,graduated college,""":""All good.  Cole isn't the definitive knowledge holder, but it's slightly more likely that he doubts Jackson.""}",Jackson ran ten miles,ai,know-neg,know,neg,0.34,0.34
+325,53,female,English,AmE,hold a higher degree,""":""""}",Jackson ran ten miles,ai,know-neg,know,neg,0.51,0.5
+374,29,male,English,AmE,graduated high school,""":""thank you""}",Jackson ran ten miles,ai,know-neg,know,neg,0.49,0.41
+386,35,male,English,AmE,some college,""":""thank u for the survey""}",Jackson ran ten miles,ai,know-pos,know,pos,0.64,1
+403,65,female,English,AmE,hold a higher degree,""":""""}",Jackson ran ten miles,ai,think-neg,think,neg,0.5,0.5
+326,56,female,English,AmE,hold a higher degree,""":""""}",Jackson ran ten miles,ai,know-pos,know,pos,0.93,0.98
+384,26,male,English,AmE,some college,""":""""}",Jackson ran ten miles,ai,know-pos,know,pos,0.68,0.82
+385,33,female,English,AmE,graduated college,""":""""}",Jackson ran ten miles,ai,think-pos,think,pos,0.82,0.83
+400,38,female,English,AmE,hold a higher degree,""":""""}",Jackson ran ten miles,ai,know-pos,know,pos,0.5,0.5
+329,66,male,English,AmE,hold a higher degree,""":""""}",Jackson ran ten miles,ai,think-pos,think,pos,0.71,0.7
+332,39,male,English,AmE,hold a higher degree,""":""Just that he either did or did not run 10 miles, so I should have probably chosen 50% for that first question as opposed to Cole's belief about his behavior. ""}",Jackson ran ten miles,ai,know-pos,know,pos,0.84,1
+328,32,preferNoToSay,English,AmE,graduated college,""":""""}",Jackson ran ten miles,ai,think-neg,think,neg,0.5,0.51
+346,64,male,English,AmE,some college,""":""""}",Jackson ran ten miles,ai,think-pos,think,pos,0.82,0.9
+350,37,female,English,AmE,graduated college,""":""""}",Jackson ran ten miles,ai,think-neg,think,neg,0.06,0.03
+366,53,female,English,AmE,hold a higher degree,""":""""}",Jackson ran ten miles,ai,think-neg,think,neg,0.16,0
+343,50,male,English,AmE,graduated high school,""":""""}",Jackson ran ten miles,ai,think-neg,think,neg,0.25,0.07
+387,42,male,English,AmE,hold a higher degree,""":""Thank you!""}",Jackson ran ten miles,ai,know-pos,know,pos,0.95,0.97
+338,49,female,English,AmE,graduated college,""":""""}",Jackson ran ten miles,ai,think-pos,think,pos,0.64,0.67
+379,31,female,English,AmE,graduated college,""":""""}",Jackson ran ten miles,ai,know-neg,know,neg,0.49,0.47
+402,49,female,English,AmE,hold a higher degree,""":""""}",Jackson ran ten miles,ai,think-pos,think,pos,0.61,0.78
+351,37,male,English,AmE,some college,""":""""}",Jackson ran ten miles,ai,know-pos,know,pos,1,1
+372,44,female,English,AmE,graduated high school,""":""""}",Jackson ran ten miles,ai,know-pos,know,pos,0.74,1
+377,40,female,English,AmE,graduated college,""":""thank you and good luck""}",Jackson ran ten miles,ai,think-pos,think,pos,0.7,0.92
+342,43,male,English,AmE,graduated college,""":""""}",Jackson ran ten miles,ai,know-pos,know,pos,0,0.71
+365,34,female,English,AmE,hold a higher degree,""":""none""}",Jackson ran ten miles,ai,think-pos,think,pos,0.53,0.49
+395,28,male,English,AmE,graduated college,""":""""}",Jackson ran ten miles,ai,know-neg,know,neg,0.51,0.38
+335,37,female,English,AmE,some college,""":""""}",Jackson ran ten miles,ai,think-neg,think,neg,0.53,0
+341,65,female,English,AmE,some college,""":""None\n""}",Jackson ran ten miles,ai,know-pos,know,pos,0.87,0.81
+382,53,male,English,AmE,some college,""":""""}",Jackson ran ten miles,ai,know-pos,know,pos,1,1
+337,21,female,English,AmE,some college,""":""""}",Jackson ran ten miles,ai,think-pos,think,pos,0.68,1
+349,44,female,English,AmE,graduated high school,""":""""}",Jackson ran ten miles,ai,think-pos,think,pos,0.79,0.77
+401,27,female,English,AmE,preferNoToSay,""":""""}",Jackson ran ten miles,ai,know-neg,know,neg,0.87,0
+373,44,female,English,AmE,graduated college,""":""""}",Jackson ran ten miles,ai,know-neg,know,neg,1,0
+360,28,female,English,AmE,hold a higher degree,""":""N/A""}",Jackson ran ten miles,ai,think-pos,think,pos,0.59,0.85
+354,30,female,English,AmE,graduated high school,""":""The study went well. Everything was clear and easy to understand.""}",Jackson ran ten miles,ai,think-neg,think,neg,0.24,0
+393,57,female,English,AmE,graduated college,""":""""}",Jackson ran ten miles,ai,know-neg,know,neg,0.63,0.2
+375,29,female,English,AmE,some college,""":""""}",Jackson ran ten miles,ai,know-neg,know,neg,0.22,0.16
+344,38,male,English,AmE,graduated high school,""":""""}",Jackson ran ten miles,ai,know-neg,know,neg,0.4,0.33
+362,38,male,English,AmE,graduated college,""":""""}",Jackson ran ten miles,ai,know-pos,know,pos,0.9,0.98
+391,41,female,English,AmE,graduated high school,""":""""}",Jackson ran ten miles,ai,know-pos,know,pos,0.98,1
+396,32,male,English,AmE,graduated college,""":""""}",Jackson ran ten miles,ai,know-pos,know,pos,0.9,0.93
+340,24,female,English,AmE,graduated college,""":""""}",Jackson ran ten miles,ai,think-pos,think,pos,0.8,0.96
+399,57,male,English,AmE,some college,""":""Everything was fine.""}",Jackson ran ten miles,ai,know-pos,know,pos,0.84,1
+378,68,female,English,AmE,some college,""":""n/a""}",Jackson ran ten miles,ai,think-pos,think,pos,0.89,1
+394,33,male,English,AmE,graduated college,""":""""}",Jackson ran ten miles,ai,know-neg,know,neg,0.3,0.46
+355,71,male,English,AmE,hold a higher degree,""":""""}",Jackson ran ten miles,ai,know-pos,know,pos,0.83,0.91
+392,35,female,English,AmE,some college,""":""""}",Jackson ran ten miles,ai,know-pos,know,pos,0.88,1
+390,25,male,English,AmE,graduated college,""":""""}",Jackson ran ten miles,ai,know-pos,know,pos,1,0.92
+348,58,female,English,AmE,graduated college,""":""N/A""}",Jackson ran ten miles,ai,know-neg,know,neg,0.83,0.93
+339,61,female,English,AmE,graduated college,""":""""}",Jackson ran ten miles,ai,know-neg,know,neg,0.52,0.55
+367,28,female,English,AmE,graduated college,""":""""}",Jackson ran ten miles,ai,think-neg,think,neg,0.3,0.04
+347,52,female,English,AmE,graduated college,""":""""}",Jackson ran ten miles,ai,know-neg,know,neg,1,0
+357,46,male,English,AmE,hold a higher degree,""":""""}",Jackson ran ten miles,ai,think-pos,think,pos,0.91,1
+397,66,male,English,AmE,graduated high school,""":""""}",Jackson ran ten miles,ai,think-neg,think,neg,0.11,0
+345,64,male,English,AmE,hold a higher degree,""":""""}",Jackson ran ten miles,ai,think-pos,think,pos,1,1
+359,46,male,English,AmE,hold a higher degree,""":""""}",Jackson ran ten miles,ai,know-neg,know,neg,1,0.52
+369,44,female,English,AmE,some college," at this time""}",Jackson ran ten miles,ai,think-pos,think,pos,0.86,0.83
+404,31,male,English,AmE,some college,""":""""}",Jackson ran ten miles,ai,know-neg,know,neg,0.86,0.14
+324,62,female,English,AmE,graduated college,""":""Thank you""}",Jackson ran ten miles,ai,think-pos,think,pos,0.9,1
+388,43,female,English,AmE,some college,""":""""}",Jackson ran ten miles,ai,know-pos,know,pos,0.98,1
+368,27,female,English,AmE,some college,""":""this study was ok.""}",Jackson ran ten miles,ai,know-pos,know,pos,0.31,0.42
+333,36,female,English,AmE,some college,""":""""}",Jackson ran ten miles,ai,think-pos,think,pos,0.51,0.5
+371,40,male,English,AmE,graduated college,""":""""}",Jackson ran ten miles,ai,think-pos,think,pos,0.77,0.79
+405,36,female,English,AmE,some college,""":""""}",Jackson ran ten miles,ai,think-neg,think,neg,0.2,0
+356,42,female,English,AmE,graduated college,""":""""}",Jackson ran ten miles,ai,know-neg,know,neg,0.42,0.24
+60,54,non-binary,English,AmE,some college,""":""""}",Charley speaks Spanish,ai,think-pos,think,pos,0.56,1
+132,21,male,English,AmE,graduated high school,""":""""}",Charley speaks Spanish,ai,think-neg,think,neg,0.24,0.22
+199,43,female,English,AmE,some college,""":""great study""}",Charley speaks Spanish,nai,think-neg,think,neg,0.56,0.19
+290,37,female,English,AmE,graduated college,""":""""}",Jackson ran ten miles,nai,think-pos,think,pos,0.87,1
+169,43,female,English,AmE,hold a higher degree,""":""""}",Charley speaks Spanish,ai,think-pos,think,pos,0.5,0.73
+78,25,female,English,AmE,graduated college,""":""""}",Charley speaks Spanish,nai,know-pos,know,pos,0.97,0.98
+215,47,male,English,AmE,graduated college,""":""""}",Jackson ran ten miles,nai,think-neg,think,neg,0.48,0.21
+258,23,female,English,AmE,graduated college,""":""""}",Charley speaks Spanish,nai,think-neg,think,neg,0.82,0.08
+316,45,male,English,AmE,some college,""":""""}",Charley speaks Spanish,ai,think-pos,think,pos,0.67,0.99
+284,39,male,English,AmE,graduated college,""":""""}",Charley speaks Spanish,nai,think-pos,think,pos,0.83,0.91
+79,49,female,English,AmE,graduated college,""":""""}",Charley speaks Spanish,nai,know-neg,know,neg,0.92,0.19
+83,58,male,English,AmE,some college,""":""""}",Jackson ran ten miles,nai,know-pos,know,pos,0.77,1
+296,71,male,English,AmE,graduated college,""":""""}",Jackson ran ten miles,nai,know-pos,know,pos,0.83,0.84
+100,30,female,English,AmE,some college,""":""""}",Charley speaks Spanish,ai,know-pos,know,pos,1,1
+3,26,female,English,AmE,graduated college,""":""""}",Charley speaks Spanish,nai,know-neg,know,neg,1,0
+47,24,male,English,AmE,graduated college,""":""""}",Charley speaks Spanish,nai,know-pos,know,pos,0.8,1
+106,33,female,English,AmE,graduated high school,""":""""}",Charley speaks Spanish,nai,know-neg,know,neg,0.83,0.17
+70,39,male,English,AmE,graduated college,""":""""}",Jackson ran ten miles,nai,think-neg,think,neg,0.29,0.04
+283,52,female,English,AmE,graduated college,""":""""}",Jackson ran ten miles,nai,think-pos,think,pos,0.84,1
+261,54,female,English,AmE,some college,""":""""}",Jackson ran ten miles,nai,know-pos,know,pos,1,1
+109,41,male,English,AmE,graduated college,""":""""}",Charley speaks Spanish,ai,think-neg,think,neg,0.18,0.02
+105,48,female,English,AmE,graduated college,""":""""}",Jackson ran ten miles,nai,know-pos,know,pos,0.88,1
+172,66,female,English,AmE,hold a higher degree,""":""""}",Charley speaks Spanish,ai,know-neg,know,neg,0.44,0.45
+289,55,male,English,AmE,graduated high school,""":""good one""}",Charley speaks Spanish,nai,think-neg,think,neg,0.82,0.13
+6,63,female,English,AmE,graduated college,""":""Not sure the purpose of what was presented.  It felt that it was solely based on making assumptions with very little facts or context.\n""}",Charley speaks Spanish,nai,think-pos,think,pos,0.55,0.56
+154,25,female,English,AmE,graduated college,""":""""}",Charley speaks Spanish,ai,know-pos,know,pos,0.92,0.98
+119,61,female,English,AmE,graduated college,""":""""}",Jackson ran ten miles,nai,think-pos,think,pos,0.53,0.67
+201,54,female,English,AmE,graduated high school,""":""""}",Jackson ran ten miles,nai,know-pos,know,pos,0.59,0.8
+104,64,female,English,AmE,graduated college,""":""It would be interesting to know why this survey is done.""}",Charley speaks Spanish,nai,know-neg,know,neg,1,0.17
+321,66,female,English,AmE,some college,""":""""}",Jackson ran ten miles,nai,know-pos,know,pos,0.95,0.75
+216,34,male,English,AmE,graduated college,""":""""}",Charley speaks Spanish,ai,think-neg,think,neg,0.08,0.1
+175,35,female,English,AmE,hold a higher degree,""":""""}",Charley speaks Spanish,ai,think-neg,think,neg,0.23,0
+189,43,female,English,AmE,some college,""":""""}",Jackson ran ten miles,nai,know-neg,know,neg,0.48,0
+271,31,female,English,AmE,some college,""":""""}",Charley speaks Spanish,ai,think-pos,think,pos,0.68,0.94
+202,45,male,English,AmE,graduated college,""":""""}",Charley speaks Spanish,ai,think-pos,think,pos,0.77,0.89
+278,34,female,English,AmE,hold a higher degree,"""}",Charley speaks Spanish,nai,think-pos,think,pos,0.66,1
+90,23,female,English,AmE,graduated college,""":""""}",Charley speaks Spanish,ai,think-neg,think,neg,0.22,0.1
+238,39,female,English,AmE,graduated college,""":""""}",Charley speaks Spanish,nai,think-pos,think,pos,0.57,0.97
+49,62,female,English,AmE,some college,""":""""}",Charley speaks Spanish,nai,think-pos,think,pos,0.8,1
+123,33,male,English,AmE,graduated college,""":""""}",Jackson ran ten miles,nai,think-pos,think,pos,0.39,0.28
+8,32,female,English,AmE,graduated college,""":""""}",Charley speaks Spanish,nai,know-neg,know,neg,1,0.17
+270,53,male,English,AmE,graduated college,""":""Thank you!""}",Charley speaks Spanish,ai,know-pos,know,pos,0.81,1
+295,41,preferNoToSay,English,AmE,graduated college,""":""""}",Jackson ran ten miles,nai,think-pos,think,pos,0.84,0.89
+254,53,male,English,AmE,graduated college,""":""""}",Jackson ran ten miles,nai,think-pos,think,pos,0,0.24
+262,27,male,English,AmE,graduated college,""":""Everything worked well.""}",Charley speaks Spanish,nai,know-pos,know,pos,1,1
+237,39,male,English,AmE,graduated college,""":""""}",Charley speaks Spanish,ai,think-neg,think,neg,0.14,0.06
+311,38,female,English,AmE,hold a higher degree,""":""""}",Charley speaks Spanish,nai,know-neg,know,neg,1,0
+112,61,female,English,AmE,graduated college,""":""""}",Charley speaks Spanish,ai,know-pos,know,pos,0.96,1
+297,23,female,English,AmE,graduated high school,""":""""}",Charley speaks Spanish,nai,know-neg,know,neg,0.88,0.23
+127,50,female,English,AmE,hold a higher degree,""":""""}",Jackson ran ten miles,nai,think-neg,think,neg,0.22,0.18
+213,37,male,English,AmE,graduated college,""":""""}",Charley speaks Spanish,ai,think-pos,think,pos,0.54,0.44
+231,39,male,English,AmE,hold a higher degree,""":""""}",Charley speaks Spanish,nai,think-pos,think,pos,0.81,0.84
+25,35,female,English,AmE,graduated college,""":""""}",Jackson ran ten miles,nai,know-neg,know,neg,0.28,0.04
+257,35,male,English,AmE,graduated college,""":""""}",Jackson ran ten miles,nai,know-neg,know,neg,0.19,0.18
+141,52,female,English,AmE,graduated college,"other than what I was given to go on, it seems likely that Cole thinks Charley speaks Spanish, and still likely that he does.""}",Charley speaks Spanish,nai,think-pos,think,pos,0.72,1
+82,54,female,English,AmE,graduated college,""":""""}",Jackson ran ten miles,nai,know-neg,know,neg,0.5,0.5
+250,22,female,English,AmE,graduated college,""":""""}",Jackson ran ten miles,nai,think-pos,think,pos,0.6,0.83
+168,32,male,English,AmE,graduated high school,""":""""}",Charley speaks Spanish,ai,think-pos,think,pos,0.68,0.84
+86,28,male,English,AmE,some college,""":""None""}",Charley speaks Spanish,ai,think-pos,think,pos,0.81,1
+217,25,male,English,AmE,graduated college,""":""""}",Charley speaks Spanish,nai,think-pos,think,pos,0.84,1
+66,34,male,English,AmE,graduated college,""":""""}",Charley speaks Spanish,nai,know-pos,know,pos,0.5,0.5
+62,62,male,English,AmE,some college,""":""Weird but I guess you know what you're going for.  I sure don't.""}",Charley speaks Spanish,nai,know-pos,know,pos,0.75,0.75
+121,60,male,English,AmE,graduated college,""":""""}",Jackson ran ten miles,nai,know-neg,know,neg,0.46,0.62
+259,30,male,English,AmE,graduated college,""":""""}",Charley speaks Spanish,nai,know-pos,know,pos,0.82,1
+41,51,male,English,AmE,some college,""":""""}",Charley speaks Spanish,ai,think-pos,think,pos,0.58,0.54
+74,30,female,English,AmE,graduated college,""":""""}",Charley speaks Spanish,nai,know-neg,know,neg,1,0.05
+155,30,male,English,AmE,graduated high school,""":""""}",Charley speaks Spanish,nai,know-pos,know,pos,0.78,1
+15,56,female,English,AmE,hold a higher degree,""":""weird!""}",Jackson ran ten miles,nai,think-pos,think,pos,0.5,0.5
+2,39,male,English,AmE,graduated college,""":""""}",Charley speaks Spanish,nai,think-neg,think,neg,0.5,0.3
+129,41,male,English,AmE,graduated high school,""":""""}",Charley speaks Spanish,ai,know-pos,know,pos,0.86,0.96
+234,62,male,English,AmE,graduated college,""":""thank you ""}",Jackson ran ten miles,nai,think-pos,think,pos,0.5,0.9
+138,49,female,English,AmE,some college,""":""""}",Charley speaks Spanish,nai,know-neg,know,neg,1,0
+51,45,female,English,AmE,graduated college,""":""""}",Charley speaks Spanish,ai,know-pos,know,pos,0.87,1
+137,57,female,English,AmE,graduated college,""":""""}",Jackson ran ten miles,nai,think-neg,think,neg,0.38,0.22
+184,65,female,English,AmE,hold a higher degree,""":""""}",Charley speaks Spanish,nai,think-neg,think,neg,0.41,0.2
+230,42,female,English,AmE,graduated college,""":""""}",Charley speaks Spanish,nai,think-pos,think,pos,0.5,1
+313,55,preferNoToSay,English,AmE,graduated college,""":""""}",Charley speaks Spanish,ai,think-neg,think,neg,0.12,0
+75,60,female,English,AmE,hold a higher degree,""":""This is an interesting question.""}",Jackson ran ten miles,nai,think-pos,think,pos,0.79,0.85
+38,31,male,English,AmE,hold a higher degree,""":""""}",Jackson ran ten miles,nai,think-pos,think,pos,0.84,0.82
+263,68,male,English,AmE,graduated college,""":""""}",Charley speaks Spanish,nai,know-neg,know,neg,1,0.01
+241,48,male,English,AmE,some college,""":""""}",Jackson ran ten miles,nai,think-neg,think,neg,0.21,0.06
+273,51,female,English,AmE,graduated high school,""":""no issue with study""}",Charley speaks Spanish,ai,know-neg,know,neg,1,0
+304,26,male,English,AmE,graduated college,""":""""}",Charley speaks Spanish,nai,know-pos,know,pos,0.72,0.94
+292,47,female,English,AmE,some college,""":""""}",Charley speaks Spanish,nai,think-pos,think,pos,0.4,0.65
+37,24,male,English,AmE,graduated college,""":""none""}",Charley speaks Spanish,ai,think-pos,think,pos,0.77,0.86
+92,29,female,English,AmE,graduated high school,""":""""}",Jackson ran ten miles,nai,think-pos,think,pos,1,1
+50,59,female,English,AmE,hold a higher degree,""":""""}",Jackson ran ten miles,nai,know-neg,know,neg,1,0
+272,56,male,English,AmE,graduated college,""":""""}",Jackson ran ten miles,nai,know-neg,know,neg,0.97,0.04
+63,25,male,English,AmE,hold a higher degree,""":""""}",Jackson ran ten miles,nai,think-neg,think,neg,0.37,0.39
+197,66,female,English,AmE,some college,""":""""}",Charley speaks Spanish,nai,think-neg,think,neg,0.25,0.02
+97,26,female,English,AmE,graduated college,""":""""}",Jackson ran ten miles,nai,know-neg,know,neg,0.74,0.27
+282,41,male,English,AmE,some college,""":""""}",Charley speaks Spanish,nai,think-pos,think,pos,0.81,0.79
+135,37,male,English,AmE,hold a higher degree,""":""There wasn't much information to go on to answer the question, but since Charley doesn't sound like a Hispanic name I assumed he didn't speak Spanish""}",Charley speaks Spanish,ai,know-pos,know,pos,0.34,0.39
+31,31,male,English,AmE,graduated college,""":""None""}",Charley speaks Spanish,nai,think-pos,think,pos,0.96,1
+310,27,female,English,AmE,graduated college,""":""""}",Charley speaks Spanish,nai,think-pos,think,pos,0.42,0.7
+229,37,male,English,AmE,some college,""":""""}",Charley speaks Spanish,ai,think-pos,think,pos,0.29,0.4
+183,32,male,English,AmE,graduated college,""":""""}",Charley speaks Spanish,nai,know-neg,know,neg,0.52,0.52
+191,58,female,English,AmE,some college,""":""The fact that someone said they knew what Cole ran would not influence me.""}",Jackson ran ten miles,nai,know-neg,know,neg,0.5,0.49
+279,58,female,English,AmE,graduated college,""":""interesting and unique study""}",Charley speaks Spanish,nai,think-neg,think,neg,0,0
+4,63,male,English,AmE,graduated college,""":""In America it is becoming necessary to be able to speak spainish.""}",Charley speaks Spanish,ai,think-neg,think,neg,0.44,0.38
+171,36,male,English,AmE,some college,""":""""}",Charley speaks Spanish,nai,know-neg,know,neg,0.6,0.61
+176,45,female,English,AmE,some college,""":""""}",Jackson ran ten miles,nai,think-pos,think,pos,0.5,1
+30,30,female,English,AmE,some college,""":""""}",Charley speaks Spanish,ai,think-pos,think,pos,0.6,0.86
+157,43,male,English,AmE,some college,""":""""}",Jackson ran ten miles,nai,know-neg,know,neg,0.75,0.28
+285,36,female,English,AmE,some college,""":""""}",Charley speaks Spanish,nai,think-neg,think,neg,0.66,0.41
+95,33,male,English,AmE,graduated college,""":""""}",Charley speaks Spanish,ai,know-neg,know,neg,0.93,0.04
+160,35,male,English,AmE,hold a higher degree,""":""""}",Charley speaks Spanish,ai,think-neg,think,neg,0.78,0.74
+150,61,male,English,AmE,graduated college,""":""""}",Charley speaks Spanish,nai,think-pos,think,pos,0.5,0.49
+323,30,male,English,AmE,graduated college,""":""""}",Jackson ran ten miles,nai,know-pos,know,pos,0.65,0.66
+98,49,female,English,AmE,some college,""":""""}",Jackson ran ten miles,nai,know-pos,know,pos,0.41,0.46
+19,22,female,English,AmE,graduated college,""":""""}",Jackson ran ten miles,nai,think-pos,think,pos,0.51,0.5
+158,41,female,English,AmE,some college,""":""""}",Charley speaks Spanish,nai,think-pos,think,pos,0.78,1
+87,51,male,English,AmE,hold a higher degree,""":""""}",Charley speaks Spanish,nai,think-pos,think,pos,0.65,0.72
+173,32,male,English,AmE,some college,""":""none""}",Charley speaks Spanish,ai,know-pos,know,pos,1,1
+80,34,female,English,AmE,hold a higher degree,""":""""}",Jackson ran ten miles,nai,think-neg,think,neg,0.27,0.16
+162,70,female,English,AmE,graduated college,""":""""}",Charley speaks Spanish,ai,think-pos,think,pos,0.68,0.98
+247,43,male,English,AmE,hold a higher degree,""":""""}",Charley speaks Spanish,nai,think-neg,think,neg,0.85,0.77
+294,50,male,English,AmE,some college,""":""""}",Charley speaks Spanish,nai,know-pos,know,pos,0.6,0.59
+72,54,male,English,AmE,graduated college,""":""""}",Charley speaks Spanish,nai,think-pos,think,pos,0.43,0.62
+56,58,preferNoToSay,English,AmE,graduated college,""":""""}",Jackson ran ten miles,nai,think-pos,think,pos,1,1
+212,28,female,English,AmE,graduated college,""":""""}",Charley speaks Spanish,nai,think-pos,think,pos,1,1
+113,32,female,English,AmE,some college,""":""""}",Charley speaks Spanish,ai,think-pos,think,pos,0.75,1
+309,35,male,English,AmE,graduated college,""":""""}",Jackson ran ten miles,nai,think-pos,think,pos,0.6,0.93
+102,37,male,English,AmE,graduated college,""":""I'm assuming she spoke to Cole and isn't just making it up on her own.""}",Charley speaks Spanish,ai,think-pos,think,pos,0.71,1
+32,52,female,English,AmE,hold a higher degree,""":""best of luck with your research!""}",Charley speaks Spanish,ai,think-neg,think,neg,0.4,0
+143,21,female,English,AmE,graduated high school,""":""""}",Charley speaks Spanish,nai,know-pos,know,pos,1,1
+122,36,male,English,AmE,some college,""":""""}",Charley speaks Spanish,nai,know-neg,know,neg,0.56,0.25
+220,39,male,English,AmE,some college,""":""""}",Charley speaks Spanish,ai,know-pos,know,pos,0.6,0.91
+84,20,female,English,AmE,graduated high school,""":""""}",Jackson ran ten miles,nai,think-pos,think,pos,0.4,0.33
+322,26,male,English,AmE,graduated college,""":""""}",Charley speaks Spanish,ai,know-pos,know,pos,0.85,0.86
+103,28,male,English,AmE,some college,""":""""}",Jackson ran ten miles,nai,think-neg,think,neg,0.2,0.03
+226,56,female,English,AmE,graduated high school,""":""""}",Jackson ran ten miles,nai,think-pos,think,pos,0.68,0.99
+125,57,male,English,AmE,hold a higher degree,""":""""}",Jackson ran ten miles,nai,think-pos,think,pos,0.5,0.68
+140,31,male,English,AmE,hold a higher degree,""":""""}",Charley speaks Spanish,ai,think-neg,think,neg,0.93,0.78
+286,28,female,English,AmE,some college,""":""""}",Jackson ran ten miles,nai,know-neg,know,neg,0.84,0.03
+146,38,male,English,AmE,graduated college,""":""""}",Jackson ran ten miles,nai,know-pos,know,pos,0.74,1
+34,48,female,English,AmE,some college,""":""""}",Charley speaks Spanish,ai,think-neg,think,neg,0.21,0.22
+269,41,female,English,AmE,hold a higher degree,""":""""}",Charley speaks Spanish,ai,think-neg,think,neg,0.15,0
+76,51,female,English,AmE,some college,""":""""}",Charley speaks Spanish,ai,know-neg,know,neg,0.78,0.13
+88,38,female,English,AmE,some college,""":""""}",Jackson ran ten miles,nai,think-neg,think,neg,0.46,0.17
+320,56,female,English,AmE,graduated high school,""":""""}",Charley speaks Spanish,nai,know-neg,know,neg,0.2,0.77
+115,21,male,English,AmE,some college,""":""""}",Charley speaks Spanish,ai,know-neg,know,neg,0.28,0
+179,36,female,English,AmE,graduated college,""":""""}",Jackson ran ten miles,nai,think-pos,think,pos,0.63,0.96
+89,38,male,English,AmE,graduated college,""":""""}",Charley speaks Spanish,ai,think-neg,think,neg,0.13,0
+118,39,male,English,AmE,graduated college,""":""""}",Charley speaks Spanish,ai,think-neg,think,neg,0.29,0
+204,28,female,English,AmE,some college,""":""""}",Jackson ran ten miles,nai,think-pos,think,pos,0.75,1
+17,28,female,English,AmE,graduated college,""":""""}",Charley speaks Spanish,nai,think-pos,think,pos,0.38,0.34
+116,40,male,English,AmE,some college,""":""""}",Jackson ran ten miles,nai,know-pos,know,pos,0.5,0.51
+94,60,male,English,AmE,graduated college,""":""""}",Jackson ran ten miles,nai,think-pos,think,pos,0.25,0.09
+16,69,male,English,AmE,some college,""":""""}",Charley speaks Spanish,nai,think-pos,think,pos,0.51,0.52
+239,30,male,English,AmE,some college,""":""""}",Jackson ran ten miles,nai,think-neg,think,neg,0.62,0.66
+7,41,female,English,AmE,graduated high school,""":""""}",Charley speaks Spanish,ai,think-pos,think,pos,0.38,0.63
+59,52,preferNoToSay,English,AmE,some college,""":""""}",Jackson ran ten miles,nai,think-pos,think,pos,0.74,0.75
+151,22,male,English,AmE,graduated high school,""":""""}",Charley speaks Spanish,ai,think-neg,think,neg,0,0
+307,26,female,English,AmE,graduated college,""":""""}",Charley speaks Spanish,nai,know-pos,know,pos,0.5,0.92
+101,37,male,English,AmE,hold a higher degree,""":""""}",Charley speaks Spanish,ai,think-pos,think,pos,0.63,0.77
+134,24,non-binary,English,AmE,graduated high school,""":""""}",Jackson ran ten miles,nai,think-neg,think,neg,0.35,0.55
+147,30,male,English,AmE,hold a higher degree,""":""""}",Jackson ran ten miles,nai,think-pos,think,pos,0.75,0.81
+223,38,female,English,AmE,graduated high school,""":""""}",Charley speaks Spanish,nai,know-pos,know,pos,0.5,0.49
+188,42,female,English,AmE,graduated college,""":""""}",Charley speaks Spanish,ai,think-neg,think,neg,0.11,0.26
+236,38,female,English,AmE,graduated high school,""":""""}",Charley speaks Spanish,nai,know-neg,know,neg,1,0
+303,37,female,English,AmE,some college,""":""""}",Charley speaks Spanish,nai,think-neg,think,neg,0.42,0.02
+315,55,female,English,AmE,graduated high school,""":""This was interesting; thank you. ""}",Charley speaks Spanish,nai,think-neg,think,neg,1,0
+85,53,female,English,AmE,some college,""":""none""}",Jackson ran ten miles,nai,think-pos,think,pos,0.11,0.1
+91,43,female,English,AmE,graduated college,""":""""}",Charley speaks Spanish,ai,think-pos,think,pos,0.61,0.75
+249,36,male,English,AmE,some college,""":""""}",Charley speaks Spanish,ai,think-neg,think,neg,0.29,0.18
+69,44,male,English,AmE,some college,""":""""}",Charley speaks Spanish,nai,think-pos,think,pos,0.62,1
+64,45,female,English,AmE,graduated high school,""":""""}",Jackson ran ten miles,nai,know-pos,know,pos,0.72,1
+302,30,male,English,AmE,hold a higher degree,""":""""}",Charley speaks Spanish,nai,think-neg,think,neg,0.28,0.05
+13,33,female,English,AmE,graduated college,""":""""}",Jackson ran ten miles,nai,think-neg,think,neg,0.4,0.07
+131,53,female,English,AmE,graduated college,""":""""}",Jackson ran ten miles,nai,think-pos,think,pos,0.76,0.82
+265,50,male,English,AmE,hold a higher degree,""":""""}",Charley speaks Spanish,ai,know-neg,know,neg,0.5,0.49
+293,37,female,English,AmE,graduated college,""":""everything was clear and easy to understand.""}",Charley speaks Spanish,ai,think-neg,think,neg,0.28,0.07
+240,29,female,English,AmE,graduated high school,""":""""}",Charley speaks Spanish,nai,know-neg,know,neg,0.49,0
+267,45,male,English,AmE,some college,""":""""}",Jackson ran ten miles,nai,know-pos,know,pos,0.83,1
+156,37,female,English,AmE,graduated high school,""":""n/a""}",Jackson ran ten miles,nai,know-pos,know,pos,0.73,1
+233,41,female,English,AmE,graduated college,""":""""}",Jackson ran ten miles,nai,think-neg,think,neg,0.27,0.25
+33,32,male,English,AmE,graduated high school,""":""""}",Charley speaks Spanish,ai,know-pos,know,pos,0.74,1
+245,45,female,English,AmE,hold a higher degree,""":""""}",Charley speaks Spanish,ai,think-pos,think,pos,0.82,0.93
+252,30,male,English,AmE,graduated college,"""}",Charley speaks Spanish,nai,know-pos,know,pos,0.78,0.87
+28,64,male,English,AmE,hold a higher degree,""":""Cole knows these people better and he doesn’t know if Charlie speaks Spanish, something he might have heard, considering his knowledge.""}",Charley speaks Spanish,ai,know-neg,know,neg,0.33,0.38
+185,29,female,English,AmE,graduated college,""":""""}",Charley speaks Spanish,nai,think-pos,think,pos,0.66,0.97
+21,36,male,English,AmE,graduated college,""":""""}",Charley speaks Spanish,ai,know-pos,know,pos,0.87,1
+54,31,non-binary,English,AmE,hold a higher degree,""":""""}",Charley speaks Spanish,ai,think-neg,think,neg,0.29,0
+23,33,male,English,AmE,graduated college,""":""""}",Charley speaks Spanish,ai,know-neg,know,neg,0.39,0.46
+24,24,female,English,AmE,graduated high school,""":""""}",Charley speaks Spanish,nai,think-pos,think,pos,0.08,0.2
+26,58,male,English,AmE,graduated college,""":""none""}",Charley speaks Spanish,nai,know-pos,know,pos,1,1
+133,36,female,English,AmE,graduated college,""":""""}",Charley speaks Spanish,ai,know-neg,know,neg,1,0.03
+67,43,male,English,AmE,graduated college,""":""everything worked well and was clear, thank you""}",Charley speaks Spanish,nai,know-neg,know,neg,1,0.29
+187,29,male,English,AmE,graduated college,""":""""}",Charley speaks Spanish,nai,know-pos,know,pos,0.87,1
+180,38,female,English,AmE,some college,""":""""}",Charley speaks Spanish,ai,know-neg,know,neg,0.81,0.41
+114,35,female,English,AmE,hold a higher degree,""":""n/a""}",Charley speaks Spanish,nai,know-pos,know,pos,0.67,0.87
+42,54,female,English,AmE,graduated college,""":""""}",Charley speaks Spanish,nai,know-neg,know,neg,0.89,0.03
+314,24,female,English,AmE,some college,""":""""}",Charley speaks Spanish,nai,think-pos,think,pos,0.74,0.72
+52,71,male,English,AmE,some college,""":""""}",Charley speaks Spanish,nai,think-pos,think,pos,0.58,0.67
+210,34,non-binary,English,AmE,hold a higher degree,""":""""}",Charley speaks Spanish,nai,think-pos,think,pos,0.73,0.98
+136,38,male,English,AmE,hold a higher degree,""":""""}",Jackson ran ten miles,nai,know-neg,know,neg,0.48,0.4
+153,40,female,English,AmE,hold a higher degree,""":""""}",Charley speaks Spanish,ai,think-pos,think,pos,0.76,0.73
+192,47,female,English,AmE,hold a higher degree,""":""""}",Charley speaks Spanish,nai,know-neg,know,neg,0.96,0.06
+44,55,male,English,AmE,some college,""":""""}",Charley speaks Spanish,ai,know-pos,know,pos,0.86,0.98
+281,36,male,English,AmE,graduated college,""":""""}",Jackson ran ten miles,nai,think-neg,think,neg,0.19,0.18
+207,46,male,English,AmE,graduated college,""":""""}",Charley speaks Spanish,ai,know-pos,know,pos,0.61,0.85
+159,61,female,English,AmE,graduated college,""":""""}",Jackson ran ten miles,nai,think-neg,think,neg,0.41,0
+221,23,male,English,AmE,graduated college,""":""""}",Jackson ran ten miles,nai,know-pos,know,pos,0.5,0.5
+57,34,male,English,AmE,hold a higher degree,""":""""}",Charley speaks Spanish,ai,think-neg,think,neg,0.31,0.02
+108,40,female,English,AmE,graduated high school,""":""N/A""}",Jackson ran ten miles,nai,think-pos,think,pos,0.51,0.52
+126,50,male,English,AmE,graduated college,""":""""}",Charley speaks Spanish,nai,know-pos,know,pos,0.57,0.71
+242,70,male,English,AmE,graduated high school,""":""None""}",Charley speaks Spanish,ai,think-neg,think,neg,0.18,0
+206,52,female,English,AmE,some college,""":""""}",Charley speaks Spanish,nai,know-pos,know,pos,0.95,0.99
+161,34,female,English,AmE,graduated college,""":""""}",Jackson ran ten miles,nai,know-neg,know,neg,0.51,0.49
+264,46,female,English,AmE,graduated college,""":""""}",Charley speaks Spanish,ai,think-pos,think,pos,1,1
+145,28,female,English,AmE,graduated high school,""":""""}",Charley speaks Spanish,nai,know-neg,know,neg,1,0
+152,38,male,English,AmE,graduated college,""":""""}",Jackson ran ten miles,nai,think-neg,think,neg,0.08,0.14
+77,44,male,English,AmE,some college,""":""""}",Charley speaks Spanish,nai,know-pos,know,pos,0.52,1
+275,42,male,English,AmE,some college,""":""""}",Jackson ran ten miles,nai,know-neg,know,neg,0.67,0.48
+280,51,female,English,AmE,graduated high school,""":""""}",Charley speaks Spanish,ai,think-neg,think,neg,0.23,0.17
+181,73,male,English,AmE,hold a higher degree,""":""""}",Charley speaks Spanish,ai,know-neg,know,neg,0.24,0.08
+144,35,female,English,AmE,graduated college,""":""""}",Charley speaks Spanish,ai,know-neg,know,neg,0.78,0.39
+93,37,male,English,AmE,graduated college,""":""""}",Jackson ran ten miles,nai,think-pos,think,pos,0.85,1
+228,32,female,English,AmE,graduated college,""":""""}",Charley speaks Spanish,ai,think-pos,think,pos,0.86,1
+301,70,female,English,AmE,some college,""":""""}",Jackson ran ten miles,nai,know-pos,know,pos,0.6,0.74
+177,53,female,English,AmE,graduated college,""":""""}",Charley speaks Spanish,ai,think-neg,think,neg,0,0
+124,59,female,English,AmE,graduated high school,""":""""}",Charley speaks Spanish,nai,think-pos,think,pos,0,1
+120,28,female,English,AmE,hold a higher degree,""":""""}",Jackson ran ten miles,nai,think-neg,think,neg,0.64,0
+110,34,male,English,AmE,some college,""":""""}",Charley speaks Spanish,ai,think-neg,think,neg,0.34,0.33
+128,30,female,English,AmE,graduated college,""":""none.""}",Charley speaks Spanish,nai,think-neg,think,neg,0.5,0.17
+243,71,female,English,AmE,graduated college,"thank you ""}",Jackson ran ten miles,nai,know-neg,know,neg,0.44,0.45
+12,36,male,English,AmE,graduated college,""":""""}",Charley speaks Spanish,ai,think-neg,think,neg,0.27,0.14
+117,68,female,English,AmE,some college,""":""Wondering what this was about\n""}",Charley speaks Spanish,ai,know-pos,know,pos,1,1
+317,36,female,English,AmE,graduated college,""":""""}",Jackson ran ten miles,nai,know-pos,know,pos,0.72,0.27
+81,32,female,English,AmE,some college,""":""""}",Jackson ran ten miles,nai,think-neg,think,neg,0.21,0.09
+266,60,female,English,AmE,graduated high school,""":""""}",Charley speaks Spanish,ai,know-neg,know,neg,0.52,0.51
+111,33,male,English,AmE,graduated college,""":""""}",Charley speaks Spanish,nai,know-neg,know,neg,0.29,0.51
+218,57,female,English,AmE,graduated college,""":""n/a""}",Charley speaks Spanish,nai,know-pos,know,pos,0.55,0.64
+170,34,female,English,AmE,hold a higher degree,""":""""}",Charley speaks Spanish,ai,know-neg,know,neg,1,1
+182,54,male,English,AmE,graduated college,""":""""}",Jackson ran ten miles,nai,know-pos,know,pos,1,1
+276,60,male,English,AmE,hold a higher degree,""":""""}",Charley speaks Spanish,ai,know-neg,know,neg,0.54,0.44
+20,35,female,English,AmE,graduated college,""":""""}",Charley speaks Spanish,nai,think-neg,think,neg,0.57,0.12
+203,71,male,English,AmE,hold a higher degree,""":""great study""}",Charley speaks Spanish,ai,know-pos,know,pos,1,1
+248,41,male,English,AmE,graduated college,""":""""}",Charley speaks Spanish,nai,know-neg,know,neg,1,0.3
+45,61,female,English,AmE,graduated college,""":""""}",Charley speaks Spanish,nai,know-pos,know,pos,0.4,0.76
+308,23,female,English,AmE,graduated college,""":""N/A""}",Charley speaks Spanish,ai,know-neg,know,neg,0.84,0.24
+55,65,female,English,AmE,graduated college,""":""""}",Charley speaks Spanish,ai,think-neg,think,neg,0,0
+209,67,female,English,AmE,graduated high school,""":""""}",Charley speaks Spanish,ai,know-pos,know,pos,0.95,0.9
+139,40,male,English,AmE,graduated college,""":""i believe Cole is a runner and is training for a marathon""}",Jackson ran ten miles,nai,know-neg,know,neg,0.78,0.77

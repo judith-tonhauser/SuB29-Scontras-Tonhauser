@@ -1,0 +1,7 @@
+utterance,Mean,data
+know-neg,0.9735395781922564,model
+think-neg,0.6642218432885759,model
+simple-pos,1,model
+know-pos,1,model
+think-pos,0.6569449019238429,model
+simple-neg,0,model

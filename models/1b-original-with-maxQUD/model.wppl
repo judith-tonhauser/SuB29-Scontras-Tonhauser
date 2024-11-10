@@ -1,0 +1,238 @@
+// helper functions
+var stringify = function(x){return JSON.stringify(x)}
+
+// utterances
+var utterances = ["pos-know-pos-dance", 
+                  "pos-think-pos-dance",
+                  "neg-know-pos-dance", 
+                  "neg-think-pos-dance",
+                  "pos-bare-pos-dance",
+                  "neg-bare-pos-dance"]
+
+
+// utterance prior is uniform
+var utterancePrior = function() {
+  uniformDraw(utterances)
+}
+
+// cost: null is least costly, then simple, then complex
+var cost = function(utterance) {
+  var splitutt = utterance.split('-')
+  var predicate = splitutt[1]
+  return predicate == "bare" ? 1 : 2
+}
+
+// world states
+var worldState = [
+  {BEL: 1, CC: 1}, 
+  {BEL: 1, CC: 0}, 
+  {BEL: 0, CC: 1},
+  {BEL: 0, CC: 0}
+]
+
+// non-uniform state prior for PL, based on CCprior ("higher" or "lower")
+var statePrior = function(CCprior) {
+  return CCprior == "higher" ? categorical({
+    vs: worldState,
+    ps: [2,1,2,1]}) : categorical({
+    vs: worldState,
+    ps: [1,2,1,2]})
+  
+}
+
+// what the speaker believes
+var commonGround = [
+  // no beliefs
+  worldState,
+  // one state excluded
+  [{BEL: 1, CC: 1}, {BEL: 1, CC: 0}, {BEL: 0, CC: 1}],
+  [{BEL: 1, CC: 1}, {BEL: 1, CC: 0}, {BEL: 0, CC: 0}],
+  [{BEL: 1, CC: 1}, {BEL: 0, CC: 1}, {BEL: 0, CC: 0}],
+  [{BEL: 1, CC: 0}, {BEL: 0, CC: 1}, {BEL: 0, CC: 0}],
+  // ah_belief = 1 but dance is uncertain
+  [{BEL: 1, CC: 1}, {BEL: 1, CC: 0}],
+  // dance = 1 but ah_belief is uncertain
+  [{BEL: 1, CC: 1}, {BEL: 0, CC: 1}], 
+  // either both are true or both are false
+  [{BEL: 1, CC: 1}, {BEL: 0, CC: 0}],
+  // ah_belief = 0, but dance is uncertain
+  [{BEL: 0, CC: 1}, {BEL: 0, CC: 0}], 
+  // dance = 0 but ah_belief is uncertain
+  [{BEL: 1, CC: 0}, {BEL: 0, CC: 0}],
+  // one is true, other one is false, but it's not clear which one
+  [{BEL: 1, CC: 0}, {BEL: 0, CC: 1}],
+  // speaker has full belief about both parts
+  [{BEL: 1, CC: 1}], 
+  [{BEL: 1, CC: 0}],
+  [{BEL: 0, CC: 1}],
+  [{BEL: 0, CC: 0}]
+]
+
+
+// Qing etal 2016 non-uniform prior over speaker beliefs
+
+var uniform = [1, // no beliefs
+        1, 1, 1, 1, // one state excluded
+        1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1]  // speaker has full belief about both parts
+
+var qingETAL = [34.533, // no beliefs
+        0.333, 0.333, 0.333, 0.333, // one state excluded
+        11.733, 11.733, 0.333, 11.733, 11.733, 0.333,
+        4.133, 4.133, 4.133, 4.133]  // speaker has full belief about both parts
+
+var pointTWO = [61, // no beliefs
+        0.333, 0.333, 0.333, 0.333, // one state excluded
+        8, 8, 0.333, 8, 8, 0.333,
+        1, 1, 1, 1]  // speaker has full belief about both parts
+
+var pointSEVEN = [9, // no beliefs
+        0.333, 0.333, 0.333, 0.333, // one state excluded
+        10, 10, 0.333, 10, 10, 0.333,
+        12, 12, 12, 12]  // speaker has full belief about both parts
+
+var qingETALmod1 = [34.533, // no beliefs
+        4, 4, 4, 4, // one state excluded
+        11.733, 11.733, 4, 11.733, 11.733, 4,
+        4.133, 4.133, 4.133, 4.133]  // speaker has full belief about both parts
+
+var qingETALmod2 = [10, // no beliefs
+        0.333, 0.333, 0.333, 0.333, // one state excluded
+        10, 10, 0.333, 10, 10, 0.333,
+        10, 10, 10, 10]  // speaker has full belief about both parts
+
+var qingETALmod3 = [34.533, // no beliefs
+        0.333, 0.333, 0.333, 0.333, // one state excluded
+        11.733, 11.733, 10, 11.733, 11.733, 0.333,
+        4.133, 4.133, 4.133, 4.133]  // speaker has full belief about both parts
+
+var qingETALmod4 = [10, // no beliefs
+        10, 10, 10, 10, // one state excluded
+        10, 10, 0.333, 10, 10, 10,
+        10, 10, 10, 10]  // speaker has full belief about both parts
+
+var qingETALmod5 = [10, // no beliefs
+        10, 0.333, 10, 10, // one state excluded
+        10, 10, 0.333, 10, 10, 10,
+        10, 10, 10, 10]  // speaker has full belief about both parts
+
+
+var CGPrior = function() {
+  return categorical({
+    vs: commonGround,
+//     ps: uniform
+       ps: qingETAL
+//     ps: pointTWO
+//     ps: pointSEVEN
+//     ps: qingETALmod1
+//     ps: qingETALmod2
+//    ps: qingETALmod3
+//     ps: qingETALmod4
+//        ps: qingETALmod5
+  })
+}
+
+
+// QUDs
+var qudFns = {
+  maxQUD : function(state) {return {BEL: state.BEL, CC: state.CC}},
+  ccQUD : function(state) {return {CC: state.CC}},
+  mcQUD : function(state) {return {BEL: state.BEL}}
+}
+
+
+// uniform prior over QUDs (if max less likely, that doesn't seem to matter much)
+var qudPrior = function() {
+  categorical({
+    vs: ["maxQUD", "ccQUD", "mcQUD"], ps: [1, 1, 1]
+  })
+}
+
+// Speaker optimality parameter
+var alpha = 10
+
+// new meaning function that does not require state to be in cg
+var meaning = function(utterance, state) {
+    utterance == "pos-know-pos-dance" ? state.BEL == 1 && state.CC == 1 :
+    utterance == "pos-think-pos-dance" ? state.BEL == 1 :
+    utterance == "pos-bare-pos-dance" ? state.CC == 1 :
+    // negated versions
+    utterance == "neg-know-pos-dance" ? false == (state.BEL == 1 && state.CC == 1) :
+    utterance == "neg-think-pos-dance" ? false == (state.BEL == 1) :
+    utterance == "neg-bare-pos-dance" ? false == (state.CC == 1) : true
+  }
+
+//  literal listener
+var literalListener = function(utterance, cg, qud) {
+  Infer({model: function() {
+    var state = uniformDraw(worldState)
+    var qudFn = qudFns[qud]
+    var qudAnswer = qudFn(state)
+    // condition in the LL instead of the meaning function
+    var stringCG = stringify(cg)
+    var stringState = stringify(state)
+    condition(stringCG.includes(stringState))
+    condition(meaning(utterance, state))
+    // original condition
+//     condition(meaning(utterance, cg, state))
+    return qudAnswer
+  }})
+} 
+
+// speaker
+var speaker = function(state, cg, qud) {
+  Infer({model: function() {
+    var utterance = uniformDraw(utterances)
+    var qudFn = qudFns[qud]
+    var qudAnswer = qudFn(state)
+    condition(meaning(utterance, state)) // the speaker is always truthful
+    factor(alpha *
+           (literalListener(utterance, cg, qud).score(qudAnswer)
+          - cost(utterance)))
+    return utterance
+  }})
+}
+
+// pragmatic listener
+var pragmaticListener = function(utterance, qud, CCprior) {
+  Infer({model: function() {
+    var state = statePrior(CCprior)
+    var cg = CGPrior()
+//     var qud = qudPrior()
+    // make sure that the state is consistent with the speaker's beliefs
+    var stringCG = stringify(cg)
+    var stringState = stringify(state)
+    condition(stringCG.includes(stringState))
+    observe(speaker(state, cg, qud), utterance)
+//     return {BEL: state.BEL, CC: state.CC}
+    return state.CC
+//     return {state:state, qud:qud}
+  }})
+}
+
+// define some speaker beliefs for easier reference
+var ccTrue = [{BEL: 0, CC: 1},{BEL: 1, CC: 1}]
+var ccFalse = [{BEL: 0, CC: 0},{BEL: 1, CC: 0}]
+var belTrue = [{BEL: 1, CC: 0},{BEL: 1, CC: 1}]
+var belFalse = [{BEL: 0, CC: 0},{BEL: 0, CC: 1}]
+var falseFalse = [{BEL: 0, CC: 0}]
+var trueFalse = [{BEL: 0, CC: 0}]
+var falseTrue = [{BEL: 0, CC: 1}]
+var trueTrue = [{BEL: 1, CC: 1}]
+
+// display("PL interprets _Cole doesn't know that Julian dances salsa_ with QUD mc?:")
+// viz.table(pragmaticListener("neg-know-pos-dance","mc","lower"))
+// viz(pragmaticListener("neg-know-pos-dance","mcQUD","lower"))
+
+
+// display("PL interprets _Cole doesn't know that Julian dances salsa_ with QUD mc?:")
+// viz.table(pragmaticListener("neg-know-pos-dance","mcQUD","lower"))
+
+// display("PL interprets _Cole doesn't know that Julian dances salsa_ with QUD cc?:")
+// viz.table(pragmaticListener("neg-know-pos-dance","ccQUD"))
+
+// display("PL interprets _Cole doesn't know that Julian dances salsa_ with QUD max?:")
+// viz.table(pragmaticListener("neg-know-pos-dance","maxQUD"))
+
+// LL: utterance, CG, QUD
+// viz.table(literalListener("pos-think-pos-dance", ah_beliefFalse, "maxQUD"))

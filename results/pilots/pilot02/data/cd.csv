@@ -1,0 +1,4 @@
+participantID,age,gender,language,amE,education,comments,content,qud,utterance,predicate,valence,responseCC,responseMC
+2,35,female,English,AmE,graduated college,""":""""}",Charley speaks Spanish,ai,know-neg,know,neg,0.15,0.23
+1,31,female,English,AmE,some college,""":""""}",Charley speaks Spanish,ai,know-neg,know,neg,0.5,0.01
+3,26,female,English,AmE,graduated high school,""":""""}",Charley speaks Spanish,ai,simple-neg,simple,neg,0.49,0.31
