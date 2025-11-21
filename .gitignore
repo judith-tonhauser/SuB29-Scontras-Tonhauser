@@ -1,0 +1,11 @@
+.DS_Store
+models/.DS_Store
+models/1-original-model/.DS_Store
+models/1a-original-more-alternatives/.DS_Store
+models/1b-original-with-maxQUD/.DS_Store
+models/2-backoff-to-prior/.DS_Store
+results/main/.DS_Store
+results/main/main01/.DS_Store
+results/main/main02/.DS_Store
+results/main/main03/.DS_Store
+models/1-original-model/.DS_Store

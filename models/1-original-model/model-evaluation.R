@@ -381,4 +381,105 @@ ggplot(tmp, aes(x=utterance, y=Mean, color=data, group = interaction(utterance, 
   xlab("\nUtterance")
 ggsave("graphs/Section4-by-utterance-comparison-original-model.pdf",height=3,width=6)
 
+# figure for Tübingen 2025 talk ----
+# strength of inference by utterance and prior (default QUDs)
+
+# read PL
+PL = read_csv("data/PL.csv")
+nrow(PL) #36
+names(PL)
+
+# calculate mean inference strength across utterances
+means.predicted = PL %>%
+  filter(state == "1") %>%
+  filter(!(grepl("know",utterance) & qud == "ccQUD")) %>%
+  filter(!(grepl("think",utterance) & qud == "ccQUD")) %>%
+  filter(!(grepl("bare",utterance) & qud == "mcQUD")) %>%
+  group_by(utterance,ccPrior) %>%
+  summarize(Mean = mean(prob)) %>%
+  droplevels() %>%
+  mutate(data = "model") %>%
+  mutate(utterance = recode(utterance, "pos-bare-pos-dance" = "simple-pos",
+                            "neg-bare-pos-dance" = "simple-neg",
+                            "pos-know-pos-dance" = "know-pos",
+                            "neg-know-pos-dance" = "know-neg",
+                            "pos-think-pos-dance" = "think-pos",
+                            "neg-think-pos-dance" = "think-neg"))
+means.predicted
+
+# add "simple-neg" with value 0 to model predictions
+means.predicted <- as.data.frame(means.predicted)
+tmp.data = data.frame(utterance = "simple-neg", Mean = 0, ccPrior = "higher", data = "model")
+tmp.data2 = data.frame(utterance = "simple-neg", Mean = 0, ccPrior = "lower", data = "model")
+means.predicted = rbind(means.predicted, tmp.data, tmp.data2)
+means.predicted
+
+# change ccPrior to prior
+means.predicted = means.predicted %>%
+  rename("prior" = "ccPrior")
+means.predicted
+
+# load data from Exp 1 to compare to
+d_exp1 <- read_csv("../../results/main/main01/data/cd.csv")
+nrow(d_exp1) #873
+names(d_exp1)
+
+# calculate mean inference in exp 1 by utterance and prior, for default QUDs
+means.exp1 = d_exp1 %>%
+  filter(!(grepl("know",utterance) & qud == "ccQUD")) %>%
+  filter(!(grepl("think",utterance) & qud == "ccQUD")) %>%
+  filter(!(grepl("simple",utterance) & qud == "mcQUD")) %>%
+  group_by(utterance, prior) %>%
+  summarize(Mean = mean(response), CILow = ci.low(response), CIHigh = ci.high(response)) %>%
+  mutate(YMin = Mean - CILow, YMax = Mean + CIHigh) %>%
+  select(-c(CILow, CIHigh)) %>%
+  mutate(data = "human")
+means.exp1
+
+means.exp1.noPrior = d_exp1 %>%
+  filter(!(grepl("know",utterance) & qud == "ccQUD")) %>%
+  filter(!(grepl("think",utterance) & qud == "ccQUD")) %>%
+  filter(!(grepl("simple",utterance) & qud == "mcQUD")) %>%
+  group_by(utterance) %>%
+  summarize(Mean = mean(response))
+means.exp1.noPrior
+
+# add fake YMin and YMax to the model predictions, for binding with human data
+means.predicted = means.predicted %>%
+  mutate(YMin = 0) %>%
+  mutate(YMax = 0)
+
+means.exp1
+means.predicted
+
+tmp = rbind(means.predicted,means.exp1)
+tmp
+
+# relevel the utterances
+tmp$utterance = factor(tmp$utterance, levels = means.exp1.noPrior$utterance[order(means.exp1.noPrior$Mean)], ordered = TRUE)
+levels(tmp$utterance)
+
+# relevel the data
+tmp$data = factor(tmp$data, levels = c("model","human"))
+levels(tmp$data)
+
+# relevel the prior
+tmp$prior <- factor(tmp$prior, levels = c("lower","higher"))
+
+ggplot(tmp, aes(x=utterance, y=Mean, shape = prior, color=data, fill=data, group = interaction(utterance, data))) +
+  geom_point(size = 3) + 
+  scale_shape_manual(values=c(25,24)) +
+  theme(legend.position="top") +
+  scale_color_manual(values = c("red","black")) +
+  scale_fill_manual(values = c("red","black")) +
+  geom_errorbar(data=tmp[tmp$data == "human",], aes(ymin=YMin,ymax=YMax),width=.05,color="black") +
+  scale_y_continuous(limits = c(0,1),breaks = c(0,0.2,0.4,0.6,0.8,1.0), labels = c("0",".2",".4",".6",".8","1")) +
+  scale_x_discrete(labels=c("simple-pos"="C", "simple-neg"="not C", "know-pos" = "Cole knows \n that C", "know-neg" = "Cole doesn't \n know that C",
+                            "think-pos" = "Cole thinks \n that C", "think-neg" = "Cole doesn't \n think that C")) +
+  ylab("Predicted probability (red) \n Mean inference rating (black)") +
+  xlab("\nUtterance")
+#ggsave("../../../../../../Downloads/results-by-utt-and-prior.pdf",height=3,width=6)
+
+
+
 

@@ -1,0 +1,590 @@
+\documentclass[a4paper,12pt,twoside]{article}
+
+\usepackage{graphicx}
+\usepackage{subcaption}
+% \usepackage{enumitem}
+% \usepackage{mathptmx}
+\usepackage{amssymb}
+% \usepackage{parskip}
+\usepackage{xcolor}
+% \usepackage[top=1.5in,left=1in,right=1in,bottom=1in]{geometry}
+% \usepackage{linguex}
+% \usepackage{rotating}
+
+% JT commented out the following line while editing
+%\pagestyle{empty} 
+
+\usepackage{mathptmx}
+\usepackage{parskip}
+\usepackage[top=1.5in,left=1in,right=1in,bottom=1in]{geometry}
+%\setlength{\parindent}{0pt}
+%\setlength{\parskip}{\the\baselineskip}
+%\pagestyle{empty} 
+
+\makeatletter
+\renewcommand\@makefntext[1]{%
+  \parindent 1em\noindent
+  \hbox{\@makefnmark}#1}
+\renewcommand\large{\@setfontsize\large{14pt}{18}} % For standardizing with the Word template: normally \large is 14.4pt
+\makeatother
+\usepackage{titlesec}
+\titleformat{\subsection}{\normalfont\normalsize}{\thesubsection.}{1ex}{}
+\titleformat{\subsubsection}{\normalfont\normalsize}{\thesubsubsection.}{1ex}{}
+\titleformat{\section}{\normalfont\normalsize\bfseries}{\thesection.}{1ex}{}
+% GREG COMMMENTED THESE OUT BECAUSE ON OVERLEAF (but not TexShop...) THE SECTION SPACING IS WRONG WHEN THESE ARE UNCOMMENTED
+% \titlespacing*{\section}{0pt}{*0}{0pt}
+% \titlespacing*{\subsection}{0pt}{\the\baselineskip}{0pt}
+
+\usepackage{natbib} 
+\bibpunct{(}{)}{;}{a}{,}{,}
+
+\setlength{\bibsep}{0pt} \relax
+\setcitestyle{notesep={: },yysep={, }} \relax
+
+\usepackage{linguex}
+\def\refdash{} % To suppress the dash in (2-a) etc. Defining both as different versions of linguex had different names for this command.
+\def\firstrefdash{}
+
+\usepackage[hidelinks]{hyperref}
+\urlstyle{same}
+
+
+\usepackage{titleps}
+\usepackage{lipsum}
+\newpagestyle{mystyle}{
+\sethead[\thepage][\Author][]{}{\Title}{\thepage}
+}
+\pagestyle{mystyle}
+\author{Scontras \and Tonhauser}
+\title{Projection without lexically specified presupposition}
+\makeatletter
+\newcommand\Author{Scontras -- Tonhauser}
+\let\Title\@title
+\makeatother
+
+% JT commented out the following line while editing
+%\pagenumbering{gobble} 
+%suppresses page numbering in header
+
+% JT starts here
+\newcommand{\gcs}[1]{\textcolor{blue}{[gcs: #1]}}
+\newcommand{\jt}[1]{\textcolor{red}{[jt: #1]}}
+
+%% referencing
+\newcommand{\posscite}[1]{\citeauthor{#1}'s (\citeyear{#1})}
+\newcommand{\poscite}[1]{\citeauthor{#1}'s \citeyear{#1}}
+
+% examples
+\def\bad{{\leavevmode\llap{*}}}
+\def\marginal{{\leavevmode\llap{?}}}
+\def\verymarginal{{\leavevmode\llap{??}}}
+\def\infelic{{\leavevmode\llap{\#}}}
+
+% to rotate column headers in table
+\newcommand*\rot{\rotatebox{90}}
+
+% suppress ref dash
+\renewcommand{\firstrefdash}{}
+
+% to repeat an example with the same numbering
+\makeatletter
+\newif\if@repeated\@repeatedfalse
+\newcounter{savedExNo}
+\renewcommand{\NormalEx}{\ifExWarning 
+     \PackageWarning{linguex}{Check example numbering (screwed up?), 
+     check number of empty lines at end of examples.  
+     Detected}\fi\ExWarningtrue
+     \if@repeated
+        \Exformat[\ref{\tmp@ref}]
+        \setcounter{ExNo}{\value{savedExNo}}
+        \global\@repeatedfalse
+     \else
+     \if@noftnote\refstepcounter{ExNo}%
+        \Exformat[\ExLBr\Exarabic{ExNo}\ExRBr]%
+     \else
+         \refstepcounter{FnExNo}\Exformat[\FnExLBr\Exroman{FnExNo}\FnExRBr]%
+     \fi
+     \fi}
+\newcommand{\exr}[1]{%
+\@repeatedtrue
+\setcounter{savedExNo}{\value{ExNo}}
+\def\tmp@ref{#1}
+\ex.}
+
+\pagenumbering{gobble} 
+%suppresses page numbering in header
+
+\makeatother
+
+\begin{document}
+\setlength{\Extopsep}{0pt}
+\thispagestyle{empty}
+
+{\large\textbf{Projection without lexically-specified presupposition: A model for \emph{know}}}\footnote{For helpful feedback, we thank the audiences at the University of Stuttgart and at \emph{Sinn und Bedeutung} 29, as well as the reviewers for \emph{Sinn und Bedeutung} 29.}\\
+Gregory SCONTRAS --- \textit{University of California, Irvine}\\
+Judith TONHAUSER --- \textit{University of Stuttgart}\\
+
+\textbf{Abstract.}
+ We present an analysis---formalized as a computational cognitive model---of the projection of the content of the clausal complement of {\em know} in utterances of negated declaratives. Our model, formulated within the Bayesian Rational Speech Act framework (\citealp{FrankGoodman2012}), derives projection from lexical entailments of {\em know} and sensitivity to the Question Under Discussion (QUD; as do \citealp{abrusan2011}, and \citealp*{simons-etal2017}), as well as reasoning about utterance informativity relative to private speaker assumptions (\citealp*{qing-etal2016,warstadt2022}). Crucially, our model predicts projection for \emph{know} without encoding the inference via a lexically-specified constraint on the Common Ground. The model goes beyond existing analyses by also making predictions about the projection of the content of the clausal complement of nonfactive  \emph{think}, as well as other types of inferences. We find support for three qualitative predictions of our model in two experiments that measured the projection inferences participants draw about utterance content.
+
+\textbf{Keywords:} projection inferences, presupposition, factivity, Rational Speech Act models.
+
+% \medskip
+
+\section{Introduction}\label{s:intro}
+
+% {\bf CITE \citealp{roberts-simons2024}!!!!}
+
+From the underlined sentence in the naturally-occurring example in \ref{first}, interpreters may infer that Estonia includes hundreds of islands, even though this content is contributed by the clausal complement of \emph{know} in the scope of sentential negation. This so-called ``projection'' inference is classically derived by coding the content of the clausal complement of \emph{know} as content that is required to be entailed by or satisfied in the Common Ground of the interlocutors prior to the interpretation of the negated \emph{know}-sentence (e.g., \citealp{heim83,vds92}). On such analyses, the content projects because it is a lexically-specified constraint on the Common Ground that must be satisfied prior to the interpretation of the negated \emph{know}-utterance.
+
+\ex. Geographically, Europe can be divided in two parts:
+Europe of the hare and Europe of the squirrel. Estonia is
+the latter: a squirrel could, without too much trouble, go
+from one end of the country to the other, jumping from
+tree to tree. Of course, \underline{the squirrel} \underline{doesn't know that
+Estonia includes hundreds of islands}, small and big.\footnote{\url{https://www.theguardian.com/world/2004/apr/26/eu.politics6}}
+%\ex. Cole doesn't know that Charley speaks Spanish.
+\label{first}
+
+Examples like \ref{first} challenge analyses on which the content of the clausal complement of \emph{know} is lexically coded as a constraint on the Common Ground because many readers of \ref{first} do not know that Estonia includes hundreds of islands prior to interpreting the negated \emph{know}-sentence. In other words, the relevant content is not part of the common ground of the interlocutors prior to interpretation. To address this challenge, analyses like \citet{heim83} and \citet{vds92} resort to a rescue strategy: The presupposed content may be globally accommodated to the common ground of the interlocutors prior to interpretation. Global accommodation is assumed to be the default, with local accommodation (e.g., in \ref{first} in the scope of negation) applying only when global accommodation would lead to inconsistencies or problems with binding.
+
+Investigations of presuppositions in naturally-occurring discourse, like \citet{delin92} and \citet{spenader02}, have shown, however, that presuppositions contributed by a variety of expressions are frequently not part of the common ground at the time at which the triggering expression is encountered. For factive predicates like \emph{know}, \citeauthor{spenader02} found that the contents of the clausal complements of the majority of the utterances of sentences
+with factive verbs (i.e., 81 out of 109) had to be accommodated. That accommodation, a rescue strategy, has to apply in the majority of examples renders analyses like \citet{heim83} or \citet{vds92} unsatisfying.
+
+In this paper, we present an analysis that derives the projection of the content of the clausal complement of \emph{know} without  coding it as a presupposition in the lexical entry of \emph{know}. Instead, the projection inference is derived from the lexical entailments of \emph{know} and sensitivity to the Question Under Discussion (QUD; see also \citealp{abrusan2011}, and \citealp{simons-etal2017}), as well as reasoning about utterance informativity relative to private speaker assumptions. Our analysis, which is formulated as a computational cognitive model in the Bayesian Rational Speech Act (RSA) framework, draws significant inspiration from the model of \cite{qing-etal2016} (see also \citealp{warstadt2022}, as well as \citealp{roberts-simons2024}, for a suggestion along these lines). Our model goes beyond existing projection analyses by also making predictions about the effects of prior beliefs on projection inferences (see, e.g., \citealp{mahler2020,mahler-thesis,degen-tonhauser-openmind}), about the projection of the content of the clausal complement of nonfactive \emph{think} (see, e.g., \citealp{simons-etal2017,degen-tonhauser-language}), as well as inferences other than projection inferences.
+
+In Section \ref{s:targets}, we begin by establishing the empirical targets that we aim to hit with our analysis. We then present our analysis in Section \ref{s:model}, showing that the model makes qualitatively-appropriate predictions regarding the empirical targets established in Section \ref{s:targets}. Section \ref{s:model} also compares our analysis to prior ones and points out that none of the prior analyses hit all three of the empirical targets we set out for ourselves. In Section \ref{s:others}, we show that a extension of the analysis presented in Section \ref{s:model} makes adequate predictions for a broader range of inferences than projection inferences. We take this result to be a further advantage of our approach to deriving projection inferences. Section \ref{s:conclusions} concludes.
+
+\section{Establishing the empirical targets} \label{s:targets}
+
+We begin with the empirical targets we aim to hit.  In \ref{pred} we present three hypotheses developed on the basis of prior theoretical and empirical research on projection. 
+
+\ex.\label{pred} Empirical hypotheses:
+\a.\label{preda} The content of the complement of \emph{know} is more projective than that of \emph{think}.
+\b.\label{predb} The contents of the complements of \emph{know} and \emph{think} are more projective when they  have a higher prior probability than when they have a lower prior probability.
+\c.\label{predc} The contents of the complements of \emph{know} and \emph{think} are more projective when they are not-at-issue than when they are at-issue.
+
+The hypothesis in \ref{preda} derives from the long-standing assumption in the literature that the content of the clausal complement of \emph{know} is more projective than that of \emph{think} (\citealp{kiparsky-kiparsky70}, i.a.), as well as empirical support from experiments (e.g., \citealp{djaerv-bacovcin2020,degen-tonhauser-language}). Regarding the hypothesis in \ref{predb}, \cite{degen-tonhauser-openmind} provided empirical evidence that the projection of the contents of the clausal complements of \emph{know} and \emph{think} are sensitive to the prior beliefs of the interlocutors (see \citealp{mahler-thesis}, for further discussion). Finally, regarding the hypothesis in \ref{predc}, \citeauthor{tbd-variability}'s (\citeyear{tbd-variability})  Gradient Projection Principle leads to the expectation that projection is sensitive to at-issueness, such that content that is more not-at-issue is also more projective.\footnote{The results of \citet{djaerv-bacovcin-salt27} and \citet{mahler-etal2020} suggest that the Gradient Projection Principle may not hold for some clause-embedding predicates. We return to this point in Section \ref{s:discussion}.}
+
+To validate these empirical hypotheses and establish the qualitative empirical targets for our analysis, we ran two behavioral experiments.\footnote{\label{footnote4}The experiments, data, and R code for generating the figures and analyses of the experiments reported on in
+this paper are available at \url{https://github.com/judith-tonhauser/SuB29-Scontras-Tonhauser}. This repository also contains the appendix with the full set of stimuli and the models presented in Sections \ref{s:model} and \ref{s:others}.} In both experiments, participants read a short story that ended with one of six utterances of interest, like those in \Next, including the negated declarative with \emph{know} in \ref{neg-know}.
+
+\ex. \label{utterances}
+\a.\label{pos-know} Cole knows that Charley speaks Spanish.
+\b.\label{neg-know} Cole doesn't know that Charley speaks Spanish.
+\b.\label{pos-think} Cole thinks that Charley speaks Spanish.
+\b.\label{neg-think} Cole doesn't think that Charley speaks Spanish.
+\b.\label{pos-bare} Charley speaks Spanish.
+\b.\label{neg-bare} Charley doesn't speak Spanish.
+
+The story manipulated the at-issueness of the content C (that Charley speaks Spanish in \ref{utterances}) via the QUD (BEL?: whether Cole believes that Charley speaks Spanish vs.~C?: whether Charley speaks Spanish) and, only in Exp.~1, the  prior probability (more vs.~less likely) of C. Participants rated the likelihood of the content after reading the story and the target utterance.
+
+\subsection{Experiment 1}
+
+Exp.~1 was designed to investigate all three hypotheses in \ref{pred}: (a) comparing the projection for \emph{know} vs.~\emph{think}, (b) comparing the projection for higher vs.~lower prior probability of content, and (c) comparing the projection for at-issue vs.~not-at-issue content.
+
+\subsubsection{Methods}
+
+\paragraph{Participants.} We recruited 883 participants via \url{prolific.com}  (ages: 18-82; mean age: 43; 443 female, 420 male, 15 nonbinary, 5 preferred to not disclose). These participants had registered on the platform as monolingual native speakers of English who lived in the USA. They had at least 100 previous submissions and an approval rate of at least 97\%.
+
+\paragraph{Materials and procedure.} Stimuli consisted of a short story that ended with one of the six utterance types in \ref{utterances}, as shown in the sample trials in Fig.~\ref{fig:stimuliExp1}. The stories manipulated the QUD (BEL? vs.\ C?) and the prior probability of the content C (higher vs.\ lower). The sample trial in Fig.~\ref{fig:stimuliExp1a} privileges the QUD BEL? (here: Does Cole believe that Charley speaks Spanish?) and the content that Charley speaks Spanish has a lower prior probability, given that Charley lives in Korea. By contrast, the sample trial in Fig.~\ref{fig:stimuliExp1b} privileges the QUD C? (here: Does Charley speak Spanish?) and the content has a higher prior probability, given that Charley lives in Mexico. Stories that privileged the QUD C? were combined with all six utterance types in \ref{utterances}, whereas stories that privileged the QUD BEL? were combined only with the four utterance types with \emph{think} or \emph{know} (which can address the QUD BEL?). The 20 conditions were realized with two items (which denote the contents C): the one about Charley speaking Spanish, and another one about Jackson running ten miles (lower prior probability: Jackson is obese; higher prior probability: Jackson is training for a marathon). The prior probabilities of the contents were normed in \citet{degen-tonhauser-openmind}. The full set of stimuli (also for Exp.~2) is given in an appendix, which is provided in the repository linked in footnote \ref{footnote4}.
+
+% 20 conditions:
+% QUD BEL: 6 utterances x 2 priors = 12 conditions
+% QUD CC: 4 utterances x 2 priors = 8 conditions
+
+\begin{figure}[ht!]
+\centering
+\begin{subfigure}{.47\textwidth}
+\centering
+\fbox{\includegraphics[width=\linewidth]{figures-stims/stim-exp1-charley-BEL.png}}
+\caption{QUD BEL?, lower prior probability, utterance `Cole knows that Charley speaks Spanish'.}\label{fig:stimuliExp1a}
+\end{subfigure} \hspace*{.2cm}
+\begin{subfigure}{.47\textwidth}
+\centering
+\fbox{\includegraphics[width=\linewidth]{figures-stims/stim-exp1-charley-CC.png}}
+    \caption{QUD C?, higher prior probability, utterance `Charley doesn't speak Spanish'.}\label{fig:stimuliExp1b}
+\end{subfigure} 
+
+\caption{Sample trials in Exp.~1, with the item `Charley speaks Spanish'.}\label{fig:stimuliExp1}
+\end{figure}
+
+Each participant completed a single trial, which consisted of a random combination of an item, a QUD, a prior, and an utterance type. Participants were asked to read the short story and then rate the likelihood of the content of the item. They gave their response on a slider marked `very unlikely' at one end (coded as 0) and `very likely' on the other end (coded as 1); see Fig.~\ref{fig:stimuliExp1}. We assume that the higher the rating, the stronger the inference to the content C. After completing the trial, participants filled out a short optional demographic survey (age, gender, native languages, speaker of American English, education). To encourage truthful responses, participants were told that they would be paid no matter what answers they gave in the survey.
+
+\paragraph{Data exclusion.} We excluded the data from 10 participants who did not self-identify as native speakers of American English in our demographic survey. Data from 873 participants entered into the analysis reported below (ages: 18-82; mean age: 43; 436 female, 417 male, 15 nonbinary, 5 preferred to not disclose).
+
+\paragraph{Results.}
+
+Fig.~\ref{fig:exp1-full} shows the full set of results aggregated by condition. Visual inspection reveals the expected qualitative pattern of responses to our six utterance types (with positive utterances receiving higher ratings than negated ones, and \emph{know}-utterances receiving higher ratings than \emph{think}-utterances), as well as the expected effect of prior for all of our utterances. 
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=.8\linewidth]{figures-Exp1/mean-rating-by-utt-prior-qud.pdf}
+   \caption{Mean inference ratings in Exp.~1 by utterance type, QUD, and prior probability of content C. Error bars indicate bootstrapped 95\% confidence intervals.}\label{fig:exp1-full}
+\end{figure}
+
+To evaluate the three empirical hypotheses in \ref{pred}, Fig.~\ref{fig:hypotheses-Exp1} plots the relevant comparisons, with the mean inference ratings by (a) utterance (negated \emph{know} vs.~negated \emph{think}), (b) prior probability (collapsing across negated \emph{know} and negated \emph{think}), and (c) QUD (collapsing across negated \emph{know} and negated \emph{think}). In support of hypothesis \ref{preda}, we see in Fig.~\ref{fig:hypotheses-Exp1}a that participants rated C as more likely when it realized the content of the complement of a negated \emph{know}-utterance than when it realized the content of the complement of a negated \emph{think}-utterance. In support of hypothesis \ref{predb}, we see in Fig.~\ref{fig:hypotheses-Exp1}b that participants rated C as more likely when it has a higher prior probability than when it has a lower one. However, in contrast to our expectation from hypothesis \ref{predc}, we fail to see in Fig.~\ref{fig:hypotheses-Exp1}c the predicted difference between the QUD conditions, whereby C would project more with QUD BEL? (C is not at-issue) than with QUD C? (C is at-issue). Thus, the results of Exp.~1 do not provide support for hypothesis \ref{predc}. We suspect that the QUD-manipulation for the complex utterance types was not sufficiently salient to participants. In Exp.~2, we follow up on this result with a more overt QUD manipulation.
+  
+
+%\begin{subfigure}{0.9\textwidth}
+%\includegraphics[width=\linewidth]{figures-Exp1/mean-rating-by-utterance-type-and-QUD.pdf}
+%    \caption{Mean inference rating by utterance type and QUD.}\label{fig:resultsExp1b}
+%\end{subfigure}
+
+%\includegraphics[width=\linewidth]{figures-Exp1/mean-rating-by-utt-prior-qud.pdf}
+
+%\caption{Mean inference ratings in Exp.~1 by utterance type, prior probability of content C, and QUD, aggregated across the two items. Utterance types are ordered from left to right by increasing mean inference rating. Error bars indicate 95\% bootstrapped confidence intervals.}\label{fig:resultsExp1}
+
+%\end{figure}
+
+
+\begin{figure}[ht!]
+\centering
+\begin{subfigure}{.3\textwidth}
+\centering
+\includegraphics[width=.95\textwidth]{figures-Exp1/H1.pdf}
+\caption{By utterance.}
+\end{subfigure} \begin{subfigure}{.3\textwidth}
+\centering
+\includegraphics[width=.95\textwidth]{figures-Exp1/H2.pdf}
+\caption{By prior probability.} 
+\end{subfigure} \begin{subfigure}{.3\textwidth}
+\centering
+\includegraphics[width=.95\textwidth]{figures-Exp1/H3.pdf}
+\caption{By QUD.}
+\end{subfigure}
+
+\caption{Mean inference rating in Exp.~1 for C (a) by utterance, aggregated across items, QUDs, and prior probabilities, (b) by prior probability, aggregated across utterances, items and QUDs, and (c) by QUD, aggregated across utterances, items, and prior probabilities. Error bars indicate 95\% bootstrapped confidence intervals.}\label{fig:hypotheses-Exp1}
+\end{figure}
+
+As shown in Table \ref{t:model-Exp1}, these observations are supported by mixed-effects linear regression models that predict participants' ratings from utterance type (negated \emph{know} vs.\ negated \emph{think}) for hypothesis \ref{preda}, from the prior probability of C (higher vs.\ lower) for hypothesis \ref{predb} for negated \emph{know} and \emph{think} together, and from the QUD (BEL? vs.\ C?) for hypothesis \ref{predc} for negated \emph{know} and \emph{think} together. The models included the maximal random-effects structure that allowed the models to converge, namely random by-prior and by-item intercepts for hypothesis \ref{preda}, random by-utterance and by-item intercepts for hypothesis \ref{predb}, and 
+by-utterance, by-prior, and by-item intercepts for hypothesis \ref{predc}. Analyses were conducted using
+the \texttt{lme4} package (\citealp{bates-etal2015}) and $p$-values were obtained using the \texttt{lmerTest} package (\citealp{kuznetsova-etal2017}).
+
+
+% \gcs{collapse across know and think}
+
+\begin{table}[ht!]
+\centering
+\begin{tabular}{l | c c c c}
+& $\beta$ & SE & t & $p$ \\ \hline
+
+Hypothesis \ref{preda}; reference level: negated \emph{think} & .35 & .03 & 12.2 & $<$.001\\ 
+
+Hypothesis \ref{predb}; reference level: lower prior probability & .16 & .03 & 5.5 & $<$.001 \\
+%\hspace*{7cm} negated \emph{know} & .13 & .04 & 3 & $<$.01\\ 
+%\hspace*{7cm} negated \emph{think} & .2 & .04 & 5.3 & $<$.001\\ 
+
+Hypothesis \ref{predc}; reference level: C? & .009 & .03 & .3 & .75 \\  
+\hline
+
+\end{tabular}
+\caption{Model results in Experiment 1.}\label{t:model-Exp1}
+\end{table}
+
+ \subsection{Experiment 2}
+
+ We hypothesize that the QUD effect did not materialize in Exp.~1 because the QUD manipulation was not sufficiently salient and any QUD effects might have been overwhelmed by the observed prior effects. Exp.~2 omitted the manipulation of the prior and manipulated the QUD in a more salient fashion. Because the QUD manipulation only concerns the four complex utterances with \emph{think} and \emph{know}, Exp.~2 did not include the simple utterance types \ref{pos-bare} and \ref{neg-bare}. 
+
+ \subsubsection{Methods}
+
+\paragraph{Participants.} We recruited 405 participants via \url{prolific.com} who had not participated in Exp.~1 (ages: 20-74; mean age: 41.8; 232 female, 162 male, 5 nonbinary, 6 preferred to not disclose). These participants had registered on the platform as monolingual native speakers of English who lived in the USA. They had at least 100 previous submissions and an approval rate of at least 97\%.
+
+\paragraph{Materials and procedure.} Stimuli consisted of a short story that ended with one of the four biclausal utterance types in \ref{utterances}, as shown in the sample trials in Fig.~\ref{fig:stimuliExp2}. The stories manipulated the QUD via the following five measures: (a) by setting up the protagonist's general goal (Fig.~\ref{fig:stimuliExp2a}: to figure out how well her assistants know her remote teacher Charley; Fig.~\ref{fig:stimuliExp2b}: to figure out who speaks Spanish), (b) by presenting a visual representation of that goal to the participants in the form of a list (cf.~\citealp{songetal2021}), (c) by highlighting, after the visual representation, the protagonist's immediate goal, which corresponds to the QUD (Fig.~\ref{fig:stimuliExp2a}: QUD BEL? `Does Cole believe that Charley speaks Spanish?'; Fig.~\ref{fig:stimuliExp2b}: QUD C? `Does Charley speak Spanish'), (d) by bold-facing the name of the individual that the respective QUD is about,\footnote{This manipulation was inspired by \citet{lu-etal-unpublished}, where boldfacing was also used to indicate prosodic prominence as a cue to the QUD.} and (e) by asking the participants to first rate the likelihood of the content that addresses the respective QUD (Fig.~\ref{fig:stimuliExp2a}: BEL? Does Cole believe that Charley speaks Spanish?; Fig.~\ref{fig:stimuliExp2b}: C? Does Charley speak Spanish?). This last manipulation means that participants in the QUD BEL? condition rated the likelihood of content C as the second question, whereas participants in the QUD C? condition rated it as the first question. The 8 conditions were realized with the same two items as in Exp.~1. For the full set of stimuli, see the aforementioned appendix. 
+
+% 8 conditions
+% QUD BEL: 4 utterances
+% QUD C: 4 utterances
+
+\begin{figure}[ht!]
+\centering
+\begin{subfigure}{.43\textwidth}
+\centering
+\fbox{\includegraphics[width=\linewidth]{figures-stims/stim-exp2-charley-BEL.png}}
+\caption{QUD BEL?, utterance `Cole thinks that Charley speaks Spanish'.}\label{fig:stimuliExp2a}
+\end{subfigure} \hspace*{.4cm}
+\begin{subfigure}{.43\textwidth}
+\centering
+\fbox{\includegraphics[width=\linewidth]{figures-stims/stim-exp2-charley-CC.png}}
+    \caption{QUD C?, utterance `Cole knows that Charley speaks Spanish'.}\label{fig:stimuliExp2b}
+\end{subfigure} 
+
+\caption{Sample trials in Exp.~2, with item `Charley speaks Spanish'.}\label{fig:stimuliExp2}
+\end{figure}
+
+Each participant completed a single trial, which consisted of a random combination of an item, a QUD, and an utterance type. Participants were asked to read the short story and then to rate the likelihood of the belief-content and the content C (with the order dependent on the QUD-condition, as detailed above). Participants gave their responses on a slider marked `very unlikely' at one end (coded as 0) and `very likely' on the other end (coded as 1); see Fig.~\ref{fig:stimuliExp2}. 
+% We assume that the higher the rating, the stronger the inference to the content. 
+After completing the trial, participants filled out a short optional demographic survey (age, gender, native languages, speaker of American English, education). As before, participants were told that they would be paid no matter what answers they gave in the survey.
+
+\paragraph{Data exclusion.} We excluded the data from 8 participants who did not self-identify as native speakers of American English. We also excluded the data from an erroneously-coded condition (additional 70 participants). The data from 327 participants entered into the analysis (ages: 20-73; mean age: 42.4; 179 female, 138 male, 4 nonbinary, 6 preferred to not disclose).
+
+\subsubsection{Results}
+
+Fig.~\ref{fig:exp2-full} plots the full results, which largely replicate the results from Exp.~1. 
+To evaluate the two hypotheses in \ref{preda} and \ref{predc}, Fig.~\ref{fig:hypotheses-Exp2} shows the mean inference ratings by (a) utterance (negated \emph{think} vs.~negated \emph{know}), and by (b) QUD (collapsing across negated \emph{think} and negated \emph{know}). In support of hypothesis \ref{preda}, we see in Fig.~\ref{fig:hypotheses-Exp2a} that participants rated C as more likely when it realized the content of the complement of a negated \emph{know}-utterance than when it realized the content of the complement of a negated \emph{think}-utterance. This result replicates the result of Exp.~1. Further, in support of hypothesis \ref{predc}, we see in Fig.~\ref{fig:hypotheses-Exp2b} that participants rated C as more likely under QUD BEL? (C is not at-issue) than under QUD C? (C is at-issue).
+
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=.6\textwidth]{figures-Exp2/mean-rating-by-utterance-type-and-QUD.pdf}
+\caption{Mean inference ratings in Exp.~2 by utterance type and QUD. Error bars indicate bootstrapped 95\% confidence intervals.}
+\label{fig:exp2-full}
+\end{figure}
+
+
+\begin{figure}[ht]
+\centering
+\begin{subfigure}{.3\textwidth}
+\centering
+\includegraphics[width=.95\textwidth]{figures-Exp2/H1.pdf}
+\caption{By utterance.}\label{fig:hypotheses-Exp2a}
+\end{subfigure} \begin{subfigure}{.3\textwidth}
+\centering
+\includegraphics[width=.95\textwidth]{figures-Exp2/H3.pdf}
+\caption{By QUD.}\label{fig:hypotheses-Exp2b}
+\end{subfigure}
+
+\caption{Mean inference rating in Exp.~2 for C (a) by utterance, aggregating across items and QUDs, and (b) by QUD, aggregating across items and negated \emph{think}- and negated \emph{know}-utterances. Error bars indicate 95\% bootstrapped confidence intervals.} \label{fig:hypotheses-Exp2}
+\end{figure}
+
+As shown in Table \ref{t:model-Exp2}, these observations are supported by mixed-effects linear regression models that predict participants' ratings from utterance type (negated \emph{know} vs.\ negated \emph{think}) for hypothesis \ref{preda} and from the QUD (BEL? vs.\ C?) for hypothesis \ref{predc} for negated \emph{know} and negated \emph{think}. The models included the maximal random-effects structure that allowed the models to converge, namely random by-QUD and by-item intercepts for hypothesis \ref{preda}, and random by-utterance and by-item intercepts for hypothesis \ref{predc}.\footnote{For hypothesis \ref{predc}, the effect is significant when collapsing across negated \emph{know} and negated 
+\emph{think}, but it does not reach significance for negated \emph{know} on its own, although the ratings trend in the expected direction.} %Analyses were conducted using the \texttt{lme4} package (\citealp{bates-etal2015}) and $p$-values were obtained using the \texttt{lmerTest} package (\citealp{kuznetsova-etal2017}).\\
+
+
+\begin{table}[htb]
+\centering
+\begin{tabular}{l | c c c c}
+& $\beta$ & SE & t & $p$ \\ \hline
+
+Hypothesis \ref{preda}; reference level: negated \emph{think} & .34 & .04 & 8.8 & $<$.001\\ 
+
+Hypothesis \ref{predc}; reference level: C? & .14 & .04 & 3.6 & $<$.001 \\ 
+%\hspace*{7cm} negated \emph{know} & .09 & .06 & 1.6 & .12 \\ 
+%\hspace*{7cm} negated \emph{think} & .17 & .05 & 3.4 & $<$.01\\ 
+
+\hline
+
+\end{tabular}
+\caption{Model results in Experiment 2.}\label{t:model-Exp2}
+\end{table}
+
+%Fig.~\ref{fig:resultsExp2} shows mean inference ratings by utterance type and QUD, with utterance types ordered from left to right by increasing mean inference rating. As in Exp.~1, mean inference ratings are higher for \emph{know}-utterances than for \emph{think}-utterances, and higher for positive complex utterances than for negated ones. Thus, in further support of P1, participants rated C as more likely for the negated \emph{know}-utterance than for the negated \emph{think} utterance. In contrast to Exp.~1, Exp.~2 provides support for P3: Participants rated C as more likely in the negated \emph{know}- and \emph{think}-utterances given QUD BEL? than given QUD C?, that is, they rated C as more likely when it was not-at-issue than when it was at-issue. These observations are supported by mixed-effect linear regression models predicting ratings from (P1) utterance type (negated \emph{know} vs.\ negated \emph{think}) or (P3) QUD BEL? vs.\ QUD C? (all $p$s $<$ .001); models included the maximal random-effects structure supported by the data. 
+
+%The results of Exp.~2 suggest that there is a QUD-effect that interacts with the polarity of the utterance: In negated utterances, the mean inference rating for the target content is higher with the QUD BEL? than with the QUD C?, whereas the opposite pattern is observed in positive utterances (REPORT MODEL RESULTS). This latter pattern replicated from Exp.~1, as shown in Fig.~\ref{fig:resultsExp1}.
+
+%\begin{figure}[h!]
+%\centering
+
+%\begin{subfigure}{0.58\textwidth}
+%\includegraphics[width=.7\textwidth]{figures-Exp2/mean-rating-by-utterance-type-and-QUD.pdf}
+%\includegraphics[width=.7\textwidth]{figures-Exp2/mean-rating-by-utterance-and-qud-exp2-overlaid.pdf}
+%    \caption{Mean inference rating by utterance type and QUD.}\label{fig:resultsExp2a}
+%\end{subfigure} 
+%\begin{subfigure}{0.4\textwidth}
+%\includegraphics[width=\linewidth]{figures-Exp2/mean-rating-exp1-vs-exp2.pdf}
+%    \caption{Mean inference rating by QUD and experiment.}\label{fig:resultsExp2b}
+%\end{subfigure}
+
+%\caption{Mean inference ratings for content C in Exp.~2 by QUD and utterance type, aggregated across the two items. Utterance types are ordered from left to right by increasing mean inference rating in Exp.~2. Error bars indicate 95\% bootstrapped confidence intervals.}\label{fig:resultsExp2}
+
+%\end{figure}
+
+%{\bf FROM THE ABSTRACT:} These observations were supported by mixed-effects linear regressions predicting ratings from (P1) utterance type (\ref{know-neg} vs.~\ref{think-neg}), (P2) the CC's prior probability (lower vs.~higher), or (P3) the QUD (BEL? vs.~C?) (all \mbox{$p$s $<$ .001}); models included the maximal random-effects structure supported by the data.  
+
+\subsection{Summary and discussion}\label{s:discussion}
+
+The results of the two experiments presented in this section provided empirical support for the three empirical hypotheses in \ref{pred}, repeated here for convenience. The model presented in the next section will be evaluated against its ability to predict these three empirical targets.
+
+\exr{pred} Empirical hypotheses: 
+\a. The content of the complement of \emph{know} is more projective than that of \emph{think}.
+\b. The contents of the complements of \emph{know} and \emph{think} are more projective when they  have a higher prior probability than when they have a lower prior probability.
+\c. The contents of the complements of \emph{know} and \emph{think} are more projective when they are not-at-issue than when they are at-issue.
+
+As mentioned above, the hypothesis in \ref{predc} is derived from \citeauthor{tbd-variability}'s (\citeyear{tbd-variability}) Gradient Projection Principle, which leads to the expectation that projection is sensitive to at-issueness, such that content that is more not-at-issue is also more projective. The results of our Exp.~2 support this hypothesis for both negated \emph{know}- and negated \emph{think}-utterances. These results are in contrast to those of \cite{djaerv-bacovcin-salt27}, who observed the opposite effect for \emph{believe}-utterances, as well as those of \cite{mahler-etal2020}, who did not observe a QUD effect for nonfactive predicates as a group. The three investigations differ, however, on a number of factors, such as the predicates investigated, the entailment-canceling operators considered, whether at-issueness was manipulated (and, if yes, how) or merely measured, and the type of stimuli. Identifying the conditions under which a QUD effect on projection emerges is an important task for future research. For now it suffices to show that with negated \emph{think} and negated \emph{know}, there is an effect of at-issueness as hypothesized in \ref{predc}.
+
+\section{A Rational Speech Act model of projection from under negation}\label{s:model}
+
+{Our model} follows the basic RSA architecture: A literal listener interprets utterances according to their semantics, a speaker reasons about the hypothetical literal listener in choosing utterances, and a pragmatic listener infers the state of the world that would have been most likely to lead the speaker to produce the observed utterance (\citeauthor{scontrasetalproblang}, electronic; \citealp{degen2023-RSA}).\footnote{A video that introduces the model and how it derives projection inferences can be found at\\ \url{https://youtu.be/8xjCuqEvVTA}.}
+ 
+To handle inferences for the various utterance types in \ref{utterances}, we  assume a set of four possible world states $\cal{W}$ (i.e., ways in which the world might be), as shown in \ref{utts}. These four world states differ on whether Cole believes that Charley speaks Spanish (BEL:1 (true) / BEL:0 (false)) and whether Charley speaks Spanish (C:1 or C:0). The model assumes the six possible utterances in \ref{utterances}, whose literal meanings are each compatible with a subset of $\cal{W}$, as shown in \ref{utts}.\footnote{\cite{qing-etal2016} assume additional utterance alternatives that exhaustively describe the possible world states uniquely. 
+Including such alternatives in our model does not improve the model predictions for \emph{know} and \emph{think}; see model {\tt 1a-original-more-alternatives} in the repo.} 
+As shown in \ref{utts}, the literal meanings of negated utterances are the complements of the literal meanings of their positive variants. Moreover, \ref{know-pos} entails the truth of the clausal complement, but there is no lexical coding of the projection inference for \ref{know-neg}.
+
+
+\ex. \label{utts} Utterance types and their literal meanings \\ $\cal{W}$ = \{$\langle$BEL:1, C:1$\rangle$,  $\langle$BEL:1, C:0$\rangle$, $\langle$BEL:0, C:1$\rangle$, $\langle$BEL:0, C:0$\rangle$\}
+\a. \label{know-pos} {\em Cole knows that Charley speaks Spanish} \hfill \{$\langle$BEL:1, C:1$\rangle$\}
+\b. \label{know-neg} \emph{Cole doesn't know that Charley speaks Spanish} \\ \hspace*{.2cm} \hfill \{$\langle$BEL:0, C:0$\rangle$, $\langle$BEL:0, C:1$\rangle$, $\langle$BEL:1, C:0$\rangle$\} 
+\b. \label{think-pos} {\em Cole thinks that Charley speaks Spanish} \hfill \{$\langle$BEL:1, C:1$\rangle$, $\langle$BEL:1, C:0$\rangle$\}
+\b. \label{think-neg} {\em Cole doesn't think that Charley speaks Spanish} \hfill \{$\langle$BEL:0, C:0$\rangle$, $\langle$BEL:0, C:1$\rangle$\}
+\b. \label{simple-pos} {\em Charley speaks Spanish}  \hfill \{$\langle$BEL:1, C:1$\rangle$, $\langle$BEL:0, C:1$\rangle$\} 
+\b. \label{simple-neg} {\em Charley doesn't speak Spanish}  \hfill \{$\langle$BEL:1, C:0$\rangle$, $\langle$BEL:0, C:0$\rangle$\} 
+
+QUDs are modeled as partitions over $\cal{W}$, following \citealp{kao-etal2014}. The QUD BEL? (whether Cole believes that Charley speaks Spanish) partitions $\cal{W}$ into the set of two world states in which Cole believes (BEL:1), and the two in which he doesn't (BEL:0). The QUD C? (whether Charley speaks Spanish) partitions $\cal{W}$ into the states where Charley speaks Spanish (C:1) and those where he doesn't (C:0). Thus, the content that Charley speaks Spanish is not-at-issue with respect to the QUD BEL?, and at-issue with respect to the QUD C?.\footnote{In contrast to \cite{qing-etal2016}, we do not assume a maximal QUD. Including such a QUD does not improve the model predictions for \emph{know} and \emph{think}; see model {\tt 1b-original-with-maxQUD} in the repo.}
+
+Finally, we follow \citet{qing-etal2016} in assuming that the literal listener interprets utterances relative to the speaker's private assumptions $A$, modeled as a non-empty subset of $\cal{W}$.\footnote{\cite{qing-etal2016} call these subsets the ``common ground,'' but we think ``private assumptions'' better captures this component of the model because the pragmatic listener does not know which $A$ is assumed.} For instance, a speaker who has no assumptions operates with respect to A = $\cal{W}$ (i.e., no world states are assumed to be ruled out), whereas a speaker who assumes that Charley speaks Spanish operates with respect to A = \{$\langle$BEL:1, C:1$\rangle$,   $\langle$BEL:0, C:1$\rangle$\} (i.e., the speaker assumes that world states in which Charley does not speak Spanish are ruled out).
+
+The literal listener $L_0$, defined in \ref{LL}, observes an utterance $u$, the speaker's assumption about possible world states $A$, and the QUD $Q$ assumed by the speaker, and returns a distribution over answers to the QUD. 
+
+\ex.\label{LL} Literal listener: $P_{L_{0}}(Q(w) \mid u, A, Q) \propto  \sum _{w' \in A \cap [\![u]\!]} \delta_{Q(w) = Q(w')} \cdot P(w')$
+
+%The result of the literal listener interpreting \ref{first} with respect to BEL? is a probability distribution over BEL:1 and BEL:0 that is modulated by the assumed CG. 
+
+
+The speaker $S_{1}$, defined in \ref{S}, observes the true state of the world $w$ and wants to convey the correct answer to the QUD $Q$, taking into consideration their assumptions $A$. The speaker evaluates the six possible utterances with respect to how likely the literal listener is to infer the correct answer given a specific utterance $u$, their assumptions $A$, and the QUD $Q$. 
+% Consider the situation of interest regarding (\ref{first}), namely where the speaker observes that Charley speaks Spanish and that Cole doesn't believe that he does ($w$ = $\langle${\sf BEL}:0, {\sf CC}:1$\rangle$). 
+%\jt{longer version:}
+%\\ If the QUD is BEL? and the CG is $\cal{W}$ (that is, nothing is known yet that could rule out a possible state of the world), the utterance {\em Cole doesn't think that Charley speaks Spanish} has greater utility than (\ref{first}) because the literal listener assigns a higher probability to {\sf BEL}: 0, the intended answer to the QUD, with the former utterance than the latter. But if the CG entails that Charley speaks Spanish, the two utterances have the same utility. Thus, the speaker is more likely to produce (\ref{first}) if the CG entails the CC than if it doesn't. This is information considered by the pragmatic listener.
+% state <1,0> is where the neg utterances pull apart -- know-neg is compatible with it but think-neg isn't
+% If the QUD is BEL?, the utterance in (\ref{first}) has a relatively higher utility relative to the CG that entails that Charley speaks Spanish than relative to the CG  $\cal{W}$ (where nothing is known yet that could rule out a possible state of the world).  Thus, the speaker is more likely to produce (\ref{first}) if the CG entails the CC than if it doesn't. This is information considered by the pragmatic listener.
+
+%$L_0$ assigns a higher probability to the intended answer to the QUD (that Cole doesn't believe that Charley speaks Spanish) with the former utterance than the latter. 
+
+\ex.\label{S} Speaker: $P_{S_{1}}(u \mid w, A, Q) \propto exp(\alpha(log(P_{L_{0}}(Q(w) \mid u, A, Q) - C(u))))$
+
+The pragmatic listener $L_1$, defined in \ref{PL}, observes an utterance $u$ and QUD $Q$ and updates their prior beliefs about the world state $w$ and the speaker assumptions $A$ by reasoning about the world state $w$ and the private assumption $A$ that the speaker used in choosing their utterance.\footnote{Projection inferences were defined in Section \ref{s:intro} as inferences about the truth of non-asserted content under an entailment-canceling operator. This definition is motivated by the fact that we evaluate the predictions of our model based on the marginal posterior probability of $w$, specifically, those $w$ in which C is true. A different definition of projection inferences as inferences about speaker belief in the truth of non-asserted content under an entailment-canceling operator (see, e.g., \citealp{degen-tonhauser-language,pan-degen2023}) is also compatible with our model, if we evaluated its predictions based on the marginal posterior probability of $A$, specifically those $A$ that entail C.}
+
+\ex.\label{PL} Pragmatic listener: $P_{L_{1}}(w, A \mid u, Q) \propto P_{S_{1}}(u \mid w, A, Q) \cdot P(w) \cdot P(A)$
+
+\subsection{Evaluating the predictions of the RSA model}
+
+We evaluate the model predictions for the negated \emph{know}- and \emph{think-}utterances assuming similar parameter settings as in \citet{qing-etal2016}.\footnote{We assume the same prior over the speaker's private assumptions as in \citet{qing-etal2016} and $\alpha=10$. The predictions shown here are stable across a number of other parameter settings. For the full model specification,  see model {\tt 1-original-model} in the repo.} We assume that the complex utterances in \ref{utterances} are twice as costly as the simple ones. For the prior probability of content, we assume that content is twice as likely to be true than to be false in a higher prior probability context, and twice as likely to be false than to be true in a lower prior probability context. 
+
+The three panels of Fig.~\ref{fig:results-qualitative} plot the predictions of the model (in red) for each of the three empirical targets in \ref{pred} against the human data from Exps.~1 and 2 (in black). As shown in panel (a), the model predicts that the inference to content C is stronger when the clausal complement that contributes C is embedded under negated \emph{know} than when it is under negated \emph{think}. As shown in panel (b), the model predicts that the inference to C is stronger when C has a higher prior probability than when it has a lower one. Finally, as shown in panel (c), the model predicts that the inference to C is stronger under QUD BEL? (C is not-at-issue) than under QUD C? (C is at-issue). As shown in each panel, the model predictions are matched qualitatively by the human data, which suggests that the model is making empirically adequate predictions.
+
+\begin{figure}[ht!]
+\centering
+\begin{subfigure}{.3\textwidth}
+\centering
+\includegraphics[width=.95\textwidth]{figures-comparison/P1-with-human.pdf}
+\caption{By utterance.}\label{fig:results-qualitative-a}
+\end{subfigure} \begin{subfigure}{.3\textwidth}
+\centering
+\includegraphics[width=.95\textwidth]{figures-comparison/P2-with-human.pdf}
+\caption{By prior probability.}\label{fig:results-qualitative-b}
+\end{subfigure} \begin{subfigure}{.3\textwidth}
+\centering
+\includegraphics[width=.95\textwidth]{figures-comparison/P3-with-human.pdf}
+\caption{By QUD.}\label{fig:results-qualitative-c}
+\end{subfigure}
+
+\caption{Predicted probability of C (in red) against mean inference rating for C from Exps.~1 and 2 (in black) (a) by utterance (data pooled from Exps.~1 and 2), aggregated across QUDs (Exps.~1 and 2), prior probabilities (Exp.~1 only) and items, (b) by prior probability, aggregated across QUDs, items and utterances (data from Exp.~1), and (c) by QUD, aggregated across utterances, items and prior probabilities (data from Exp.~2). Error bars on mean inference ratings indicate 95\% bootstrapped confidence intervals.}\label{fig:results-qualitative}
+\end{figure}
+
+We now discuss how the model derives the three empirical targets in \ref{pred}, starting with the empirical target in \ref{preda}, according to which an interpreter (modeled as a pragmatic listener $L_1$) is more likely to infer C for negated \emph{know}-utterances than for negated \emph{think}-utterances. What is crucial here is that the negated \emph{think}-utterance is semantically stronger than the negated \emph{know}-utterance, as the former excludes more states. Thus, if the speaker makes no private assumptions (e.g., A = $\cal{W}$),  the negated \emph{think}-utterance is more informative than the negated \emph{know}-utterance and, hence, more useful; more useful utterances are more likely to be selected by the speaker. On the other hand, the negated \emph{know}-utterance is just as informative as the negated \emph{think}-utterance if the speaker assumes C (i.e., A entails C) and the QUD is BEL?, as now the negated \emph{know}-utterance fully answers the QUD. So, an interpreter is more likely to infer that the speaker assumes C upon observing that the speaker produced the negated \emph{know}-utterance; with this assumption, uttering the negated \emph{know}-utterance becomes much more likely. In other words, given that the pragmatic listener infers the conditions that led the speaker to produce the utterance that they heard, upon hearing negated \emph{know} the listener infers that the speaker assumed C when making the utterance.
+
+The next empirical target is \ref{predb}, according to which interpreters are more likely to infer C when it has a higher prior probability than when it has lower prior probability. Generalizing across possible speaker private assumptions A, neither the negated \emph{know}-utterance nor the negated \emph{think}-utterance resolve whether C is true. Without information from the utterance, interpreters are left to rely on their prior beliefs to infer the world state. When prior beliefs favor C, posterior beliefs will, too.
+
+The final empirical target is \ref{predc}, according to which interpreters are more likely to infer C when the QUD is BEL? (C is not-at-issue) than when it is C? (C is at-issue). As noted above for \ref{preda}, if the QUD is BEL?, it is reasonable to infer from both the negated \emph{know}- and \emph{think}-utterances that the speaker assumes that C is true, as both utterances are informative in this constellation (that is, they resolve the QUD to  BEL:0). On the other hand, if the QUD is C?, interpreters are unlikely to infer that the speaker assumes that C is true from either of the two utterances, as neither would resolve the QUD. 
+
+The quantitative predictions of the model are also quite good already, given that we are assuming parameters of \cite{qing-etal2016}, who did not evaluate the predictions of their model against human data. There are, however, some apparent mismatches in the quantitative predictions. First, as shown in Fig.~\ref{fig:results-qualitative-a}, the predicted probability of C is too high for negated \emph{think}-utterances, compared to the human data pooled from Exps.~1 and 2. This result suggests that the model does not derive the neg-raising inference for such utterances (see also \citealp{pan-degen2023}). Second, as shown in Fig.~\ref{fig:results-qualitative-b}, the effect of the prior beliefs is stronger in the model than in the data collected in Exp.~1. Further, as shown in Fig.~\ref{fig:results-qualitative-c}, the effect of the QUD is stronger in the model than in the data collected in Exp.~2. Both of these latter mismatches between the model predictions and the human data may be due to model error or because the manipulation in the experiments was not sufficiently clear. Teasing these two possibilities apart is an important goal for future research.
+
+
+%\begin{figure}[h!]
+%\centering
+
+%\includegraphics[width=.95\textwidth]{figures-comparison/mean-rating-exp1-exp2-model.pdf}
+
+%\caption{Mean inference ratings for the target content by utterance in Exp.~1 (offset to the left), the model (middle), and Exp.~2 (offset to the right), prior probability (Exp.~1 and model) and QUD (Exps.~1 and 2, and model). Utterance types are ordered from left to right by increasing mean inference rating in Exp.~1. Error bars indicate 95\% bootstrapped confidence intervals.}\label{fig:results-comparison}
+%\end{figure}
+
+\subsection{Discussion}
+
+This section has presented a formal analysis for the projection of the content of the clausal complement of negated \emph{know}-utterances. The model predicts that interpreters are more likely to derive a projection inference from negated \emph{know}-utterances than negated \emph{think}-utterances, when the prior probability of the content is higher than when it is lower, and when the content is not-at-issue with respect to the QUD than when it is at-issue. These model predictions are matched qualitatively by the human data collected in Exps.~1 and 2. 
+
+The analysis shares with the approaches in \citet{simons01}, \citet{abusch02,abusch10}, \citet{abrusan2011,abrusan2016}, \citet{romoli2015}, \citet{simons-etal2017}, and \citet{roberts-simons2024} the assumption that the projection of content is not derived from the lexical specification of the content as a presupposition, but from the lexical meanings of expressions as well as reasoning. Our approach contrasts with analyses like \citet{heim83}, \citet{vds92}, and \citet{djaerv-bacovcin2020}, where projection inferences arise from the lexical specification of content as a constraint on the Common Ground. Our analysis also captures the spirit of some of these prior analyses of projection inferences. First, projection inferences are derived in our analysis from the lexical entailments of \emph{know} and \emph{think}, in positive and negated utterances, just as in \citet{abrusan2011,abrusan2016}, and \citet{simons-etal2017}. Second, our analysis assumes that projection is sensitive to the QUD addressed by the utterance, as do \citet{abrusan2011,abrusan2016}, and \citet{simons-etal2017}. Our analysis also assumes that projection is sensitive to interpreters' prior beliefs about content, an assumption that resembles \citeauthor{schlenker2021}'s (\citeyear{schlenker2021}) assumption that not just lexical entailments may project but also content that is contextually entailed. Finally, our analysis assumes that utterance alternatives are central to deriving projection inferences, an assumption also found in works like \citet{abusch02,abusch10}, and \citet{romoli2015}, although the role of alternatives in these analyses is different.  
+
+Despite  shared assumptions between our analysis and prior ones, none of the prior analyses are able to predict the three empirical targets in \ref{pred}, as summarized in Table \ref{t:predictions}. While all analyses predict that content is more projective from under negated \emph{know} than from under negated \emph{think} (hypothesis \ref{preda}), none of the contemporary projection analyses except \citeauthor{schlenker2021}'s (\citeyear{schlenker2021}) predict that projection is sensitive to the prior probability of the content (hypothesis \ref{predb}). With respect to hypothesis \ref{predc}, only the analyses in \citet{djaerv-bacovcin2020}, \citet{abrusan2011,abrusan2016}, \citet{simons-etal2017}, and \citet{brst-ar} predict that projection is sensitive to the QUD, in addition to our analysis.
+
+
+\begin{table}[tb]
+\centering
+\begin{tabular}{r | c c c c c c c}
+Empirical hypothesis: Content C projects more... &  \rot{\citealp{heim83,vds92}} & \rot{\citealp{djaerv-bacovcin2020}} & \rot{\citealp{abrusan2011,abrusan2016}} & \rot{\citealp{simons-etal2017,brst-ar}} & \rot{\citealp{romoli2015}} & \rot{\citealp{schlenker2021}}  & \rot{Analysis presented here} \\\hline
+\ref{preda}: ...from under negated \emph{know} than negated \emph{think}. & $\checkmark$ & $\checkmark$ & $\checkmark$& $\checkmark$& $\checkmark$& $\checkmark$ & $\checkmark$\\ 
+\ref{predb}: ...with higher than with lower prior probabilities. & $\times$ & $\times$  &  $\times$ & $\times$ & $\times$ & $\checkmark$ & $\checkmark$ \\ 
+\ref{predc}: ...with QUD BEL? than with QUD C?. & $\times$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\times$ & $\times$ & $\checkmark$ \\ 
+\hline
+\end{tabular}
+
+% \begin{tabular}{r | ccc}
+% & \ref{preda} & \ref{predb} & \ref{predc} \\ \hline
+% \citealp{heim83,vds92} & $\checkmark$ & $\times$ & $\checkmark$ \\
+% \citealp{djaerv-bacovcin2020} & $\checkmark$ & $\times$ & $\checkmark$ \\
+% \citealp{abrusan2011,abrusan2016} & $\checkmark$ & $\times$ & $\checkmark$ \\
+% \citealp{simons-etal2017,brst-ar} & $\checkmark$ & $\times$ & $\checkmark$ \\
+% \citealp{romoli2015} & $\checkmark$ & $\times$ & $\checkmark$ \\
+% \citealp{schlenker2021}  & $\checkmark$ & $\checkmark$ & $\times$ \\
+% Analysis presented here & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+% \hline
+
+% \end{tabular}
+
+
+\caption{Predictions of formal projection analyses with respect to the three empirical hypotheses in \ref{pred}: $\checkmark$ indicates that the analysis captures the empirical target, $\times$ that it does not.}\label{t:predictions}
+\end{table}
+
+
+
+Of course, a pressing task for future research is to extend the analysis presented in this section to other entailment-canceling operators besides sentential negation.
+
+% \newpage
+
+\section{Predictions for non-projection inferences}\label{s:others}
+
+We have seen that the analysis presented in Section \ref{s:model} makes empirically-adequate predictions about projection inferences, that is, inferences to non-asserted content in the scope of an entailment-canceling operator. The analysis also makes predictions about other types of inferences---specifically, it makes predictions about the strength of the inference to the asserted content of the positive and negated declarative sentences in \ref{pos-bare} and \ref{neg-bare}, respectively, and it makes predictions about the strength of the inference to the non-asserted content embedded under positive \emph{know} and \emph{think} in \ref{pos-know} and \ref{pos-think}, respectively. That our analysis of projection inferences is couched in a general analysis of inferences stands as an additional advantage.
+
+Fig.~\ref{fig:originalModel} plots (in red) the predictions of the model presented in Section \ref{s:model} for the full range of utterances. For the current purposes of model refinement, we limit our focus to what we consider the default QUDs for the individual utterances (for simple utterances the default QUD is C?; for complex utterances with \emph{think} and \emph{know} it is BEL?) and to the `higher' prior condition. 
+While the model captures some of the response patterns in the human data (plotted in black; e.g., lowest inference ratings for simple negated \emph{not C} and highest ratings for simple positive \emph{C} and positive \emph{know}; generally higher ratings for \emph{know} compared to \emph{think}), there are several points where the quantitative predictions deviate substantially. To improve the quantitative predictions of our model, in this section we more systematically explore the parameter space. We also introduce a change to the model that allows for less categorical behavior.
+% 
+\begin{figure}[ht!]
+\centering
+
+\includegraphics[width=.9\textwidth]{figures-comparison/Section4-by-utterance-comparison.pdf}
+
+\caption{Predicted probabilities for content C (for the model in Section \ref{s:model} in red and for the model in Section \ref{s:others} in blue) when C has higher prior probability, under QUD BEL? for complex utterances and QUD C? for simple utterances, compared to mean inference ratings for C (in black) from Exp.~1 when C has higher prior probability, under QUD BEL? for complex utterances and QUD C? for simple utterances, aggregated across items. Error bars indicate 95\% bootstrapped confidence intervals.}\label{fig:originalModel}
+
+\end{figure}
+
+
+
+Perhaps the most obvious shortcoming of the model predictions in Fig.~\ref{fig:originalModel} comes for the negated declarative \emph{not C}, where the model follows the literal semantics and predicts zero inference to the truth of C, yet humans seemingly dismiss or downweight the semantics and provide much higher ratings. We find similar behavior, although less extreme, for positive \emph{know} and the simple positive \emph{C}, where the literal semantics leads the model to predict certainty in the truth of C, yet participants are less sure. To improve the quantitative fit of our model we therefore need to introduce more flexibility than is allowed for by the literal semantics.
+
+We find inspiration from the so-called ``wonky worlds'' model of \citet{degen-etal2015}, which provides listeners with the means of disregarding an unlikely interpretation, choosing to back off to their prior beliefs instead. We suspect that the human response patterns in Fig.~\ref{fig:originalModel} arise from a similar process: When a literal interpretation is too unlikely, for example hearing that \emph{Charlie doesn't speak Spanish} despite living in Mexico, a pragmatic listener disregards the utterance and instead uses their prior beliefs to complete the task. Importantly, this process is not categorical: Interpreters downweight the literal interpretation to the extent that it deviates from what they take to be likely. 
+
+We implement this reasoning process in our model at the level of the pragmatic listener: The listener first interprets the utterance in the manner described in Section \ref{s:model}. To evaluate plausibility, the $L_1$ listener then compares the marginal posterior distribution over C (e.g., the extent to which they believe that Charlie speaks Spanish after interpretating the utterance) with their marginal prior over C (what they believed about C before hearing the utterance). We implement this comparison as the Kullback–Leibler (KL) divergence of the marginal posterior from the marginal prior. We convert this divergence value into a probability, $e^{-\textrm{\emph{divergence}}}$, such that a divergence value of 0 (i.e., the posterior perfectly matches the prior) yields probability 1. The pragmatic listener returns a sample from their posterior in proportion to this probability.
+
+% In this section, we present the predictions of a variant of the analysis presented in Section \ref{s:model} for the full range of inferences. \jt{need to say something about why we don't just present the predictions of the analysis of section 3. QUALITATIVE FIT IN SECTION 3 WAS GREAT BUT NOT QUANTITATIVE FIT, NOW WE WORK WITH A MODEL WHERE WE ALREADY TRIED TO GET QUANTIATTIVE FIT}
+% The analysis whose predictions are shown in Fig.~\ref{fig:newModel} against the results of Exp.~1 is like the analysis presented in Section \ref{s:model} except for the following changes:
+
+
+% \begin{itemize}[leftmargin=16pt,topsep=-1ex,itemsep=-2pt]
+%\item Like previous one: QUD BEL? and QUD C?, 6 utterances, uniform state prior for LL, same literal meaning, same LL, same S
+
+The change described above allows the interpreter to systematically deviate from the literal semantics in a way that loosens up interpretations in line with the behavior of our participants. To further improve the fit of our model, we introduce the following changes. For our world state prior, C is four times as likely to be true than to be false. Instead of assuming that the speaker's private assumptions $A$ may be any non-empty subset of $\cal{W}$, we assume that $A$ may only be those nine non-empty subsets of $\cal{W}$ in \ref{newA} that are obtained by observing nothing, that BEL is true/false, that C is true/false, or observing the truth or falsity of both BEL and C. We further assume that having knowledge of C is four times as likely has having knowledge of BEL, and that having full knowledge of both BEL and C is half as likely as having only knowledge of BEL. We also assume that having no beliefs about either BEL or C is half as likely as having full knowledge. Finally, we set the speaker's optimality parameter $\alpha$ to 4.
+
+\exi. \label{newA}
+\a.\label{nothing}  \{$\langle$BEL:1, C:1$\rangle$,  $\langle$BEL:1, C:0$\rangle$, $\langle$BEL:0, C:1$\rangle$, $\langle$BEL:0, C:0$\rangle$ \} 
+\b.\label{ABEL1} \{$\langle$BEL:1, C:1$\rangle$,  $\langle$BEL:1, C:0$\rangle$\} 
+\b.\label{ABEL0} \{$\langle$BEL:0, C:1$\rangle$, $\langle$BEL:0, C:0$\rangle$\} 
+\b.\label{AC1} \{$\langle$BEL:1, C:1$\rangle$, $\langle$BEL:0, C:1$\rangle$\} 
+\b.\label{AC0} \{$\langle$BEL:1, C:0$\rangle$, $\langle$BEL:0, C:0$\rangle$\} 
+\b.[f.-i.] \{$\langle$BEL:1, C:1$\rangle$\}, \{$\langle$BEL:1, C:0$\rangle$\}, \{$\langle$BEL:0, C:1$\rangle$\}, \{$\langle$BEL:0, C:0$\rangle$\}
+%\c. \{$\langle$BEL:1, C:0$\rangle$\}
+%\d. \{$\langle$BEL:0, C:1$\rangle$\}
+%\e.\label{Ai} \{$\langle$BEL:0, C:0$\rangle$\}
+
+Fig.~\ref{fig:originalModel} compares the predictions from this new version of our model (in blue) with the human responses from Exp.~1 (in black). While there are still opportunities for improvement (e.g., the predictions for negated \emph{think} and positive \emph{know}), the amendments to our model in Section \ref{s:model} indeed yield a better fit to the data. For the simple utterances, this result suggests that participants incorporate their prior beliefs about the truth of the content in determining their posterior beliefs, rather than just relying on the fact that the speaker asserted the content or its negation.
+
+\section{Conclusions}\label{s:conclusions}
+
+This paper has presented an analysis of the projection of the content of the clausal complement of negated declaratives with \emph{know} that goes beyond contemporary projection analyses (e.g., \citealp{heim83,vds92,djaerv-bacovcin2020,abrusan2011,abrusan2016,simons-etal2017,schlenker2021}) in that it predicts both sensitivity to the QUD and to interpreters' prior beliefs. The analysis also goes beyond most contemporary analyses in making predictions about the projection of the content of the clausal complement of negated declaratives with \emph{think} (though see, e.g., \citealp{simons-etal2017}). By relying on general reasoning about utterance alternatives and lexical entailments (rather than lexically-coded constraints on the Common Ground), our analysis has the potential to extend more broadly to predicates with non-entailed clausal complements. A further benefit of our analysis is that it is couched in a general analysis of inferencing, and also makes empirically adequate predictions about other types of inferences.
+
+Methodologically, the experiments presented here suggest that the QUD can be successfully manipulated if the story goal and the relevant alternatives are made very explicit. Future research will need to investigate whether spoken stimuli further enhance the QUD  manipulation.\\
+
+\bibliographystyle{sub-chicago}
+\bibliography{bibliography}
+
+
+\end{document}
+
+
